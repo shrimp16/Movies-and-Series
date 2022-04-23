@@ -1,0 +1,9 @@
+1 - Node JS server to host the app
+2 - Register and login
+3 - Users have access to a code to share their profile for other users to see their movies/series
+4 - Content {
+	Title,
+	Image,
+	Rate
+	}
+5 - Let the users create their own profile
