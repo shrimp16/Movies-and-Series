@@ -1,4 +1,3 @@
-const fileManager = require('./file_manager.js');
+const userManager = require('./Users/users')
 
-fileManager.a();
-fileManager.b();
+console.log(userManager.getUserById(0))
