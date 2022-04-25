@@ -1,14 +1,22 @@
 const fileManager = require('./fileManager');
 
 module.exports = {
-    register: () => {
-        console.log("wip");
+    register: (username, password) => {
+        let users = fileManager.getUsers();
+        let newUser = {
+            username: username,
+            password: password,
+            id: users.length,
+            content: []
+        }
+        users.push(newUser);
+        fileManager.updateFile(users);
     },
-    login: () => {
+    login: (username, password) => {
         console.log("wip");
     }
 }
 
-function usernameExists(){
+function usernameExists(username){
     console.log("wip")
 }

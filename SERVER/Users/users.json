@@ -1,12 +1,20 @@
-{
-  "username": "user",
-  "password": "password",
-  "id": 0,
-  "content": [
-    {
-      "title": "Fairy Tail",
-      "rate": 10,
-      "image": "image dir"
-    }
-  ]
-}
+[
+  {
+    "username": "user",
+    "password": "password",
+    "id": 0,
+    "content": [
+      {
+        "title": "Fairy Tail",
+        "rate": 10,
+        "image": "image dir"
+      }
+    ]
+  },
+  {
+    "username": "lmao",
+    "password": "xdxd",
+    "id": 1,
+    "content": []
+  }
+]

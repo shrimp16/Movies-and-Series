@@ -1,18 +1,5 @@
 const userManager = require('./Users/fileManager')
 
-console.log(userManager.getUserById(0))
+const auth = require('./Users/auth');
 
-const data = {
-    username: "user",
-    password: "password",
-    id: 0,
-    content: [
-        {
-            title: "Fairy Tail",
-            rate: 10,
-            image: "image dir"
-        }
-    ]
-}
-userManager.updateFile(data);
-
+auth.register("lmao", "xdxd")
