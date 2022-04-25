@@ -1,16 +1,13 @@
-const fs = require('fs');
+const fileManager = require('./fileManager')
 
 module.exports = {
-    getUsers: () => {
-        return JSON.parse(fs.readFileSync('./Users/users.json'))
-    },
-    getUserById: (id) => {
-        return module.exports.getUsers()[id]
-    },
-    updateFile: (data) => {
+    createUser: () => {
         console.log("wip")
     },
-    removeContent: (user, contentID) => {
+    addContent: () => {
+        console.log("wip")
+    },
+    removeContent: () => {
         console.log("wip")
     }
 }
