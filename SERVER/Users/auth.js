@@ -18,7 +18,16 @@ module.exports = {
         fileManager.updateFile(users);
     },
     login: (username, password) => {
-        console.log("wip");
+        
+        let users = fileManager.getUsers();
+        for(let i = 0; i < users.length; i++){
+            if(users[i].username === username && users[i].password === password){
+                return true;
+            }
+        }
+
+        return false;
+        
     }
 }
 
@@ -33,5 +42,5 @@ function usernameExists(user){
     }
 
     return false;
-    
+
 }
