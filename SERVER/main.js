@@ -6,5 +6,3 @@ const content = {
     rate: 7,
     image: "image test"
 }
-
-user.removeContent(0, 1);

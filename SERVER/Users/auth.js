@@ -14,6 +14,7 @@ module.exports = {
             id: users.length,
             content: []
         }
+        
         users.push(newUser);
         fileManager.updateFile(users);
     },
@@ -27,7 +28,7 @@ module.exports = {
         }
 
         return false;
-        
+
     }
 }
 

@@ -13,7 +13,7 @@ module.exports = {
     removeContent: (userID, contentID) => {
         
         let users = fileManager.getUsers();
-        
+
         if(contentID === 0){
             users[userID].content.shift();
         }else {
@@ -21,6 +21,11 @@ module.exports = {
         }
 
         fileManager.updateFile(users);
+    },
+    getUserContent: (userID) => {
+
+        return fileManager.getUserById(userID).content;
+        
     }
 
 }
