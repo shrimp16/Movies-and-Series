@@ -1,6 +1,11 @@
 const userManager = require('./Users/fileManager');
+const user = require('./Users/users');
 
-const auth = require('./Users/auth');
+const content = {
+    title: "xdxd",
+    rate: 7,
+    image: "image test"
+}
 
-auth.register("lmao", "xdxd");
-console.log(auth.login("lmasdfao", "xdxd"));
+
+user.addContent(0, content);

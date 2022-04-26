@@ -1,13 +1,16 @@
 const fileManager = require('./fileManager')
 
 module.exports = {
-    createUser: () => {
-        console.log("wip")
+    addContent: (userID, content) => {
+
+        let users = fileManager.getUsers();
+        
+        users[userID].content.push(content);
+
+        fileManager.updateFile(users);
+
     },
-    addContent: () => {
-        console.log("wip")
-    },
-    removeContent: () => {
+    removeContent: (userID, contentID) => {
         console.log("wip")
     }
 }
