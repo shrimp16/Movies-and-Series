@@ -2,6 +2,11 @@ const fileManager = require('./fileManager');
 
 module.exports = {
     register: (username, password) => {
+
+        if(usernameExists(username)){
+            return "Username already exists!"
+        }
+
         let users = fileManager.getUsers();
         let newUser = {
             username: username,
@@ -17,6 +22,16 @@ module.exports = {
     }
 }
 
-function usernameExists(username){
-    console.log("wip")
+function usernameExists(user){
+
+    let users = fileManager.getUsers();
+
+    for(let i = 0; i < users.length; i++){
+        if(users[i].username === user){
+            return true;
+        }
+    }
+
+    return false;
+    
 }
