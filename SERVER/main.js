@@ -7,5 +7,4 @@ const content = {
     image: "image test"
 }
 
-
-user.addContent(0, content);
+user.removeContent(0, 1);

@@ -11,6 +11,16 @@ module.exports = {
 
     },
     removeContent: (userID, contentID) => {
-        console.log("wip")
+        
+        let users = fileManager.getUsers();
+        
+        if(contentID === 0){
+            users[userID].content.shift();
+        }else {
+            users[userID].content.splice(contentID, 1);
+        }
+
+        fileManager.updateFile(users);
     }
+
 }
