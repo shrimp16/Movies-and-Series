@@ -7,3 +7,8 @@
 	Rate
 	}
 5 - Let the users create their own profile
+
+ContentAdd - 
+	Need to do 2 post requests, 1 that will send the text about the content, other that will send the image,
+	The first request will send the file and recieve as a response the name of the file on the server,
+	then the second request will send a JSON with the text about the content and the image name on the server;

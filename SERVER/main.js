@@ -1,8 +1,11 @@
-const userManager = require('./Users/fileManager');
-const user = require('./Users/users');
+const express = require('express');
+const upload = require('./Storage/storageManager');
+const app = express();
 
-const content = {
-    title: "xdxd",
-    rate: 7,
-    image: "image test"
-}
+app.listen(12345, () => {
+    console.log("server running");
+})
+
+app.post('/file', upload.single('image'), (req, res) => {
+    res.send(req.file.filename);
+})
