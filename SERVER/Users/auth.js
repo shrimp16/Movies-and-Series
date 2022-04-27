@@ -17,6 +17,8 @@ module.exports = {
         
         users.push(newUser);
         fileManager.updateFile(users);
+        
+        return "User created with success!";
     },
     login: (username, password) => {
         
