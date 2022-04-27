@@ -25,7 +25,7 @@ module.exports = {
         let users = fileManager.getUsers();
         for(let i = 0; i < users.length; i++){
             if(users[i].username === username && users[i].password === password){
-                return true;
+                return i;
             }
         }
 
