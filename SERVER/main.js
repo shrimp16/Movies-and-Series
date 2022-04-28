@@ -8,7 +8,3 @@ app.listen(12345, () => {
 })
 
 app.use(usersRouter);
-
-app.post('/file', upload.single('image'), (req, res) => {
-    res.send(req.file.filename);
-})
