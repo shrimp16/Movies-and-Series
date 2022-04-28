@@ -24,7 +24,14 @@ module.exports = {
     },
     getUserContent: (userID) => {
 
-        return fileManager.getUserById(userID).content;
+        let user = fileManager.getUserById(userID);
+
+        let userData = {
+            username: user.username,
+            content: user.content
+        }
+
+        return userData;
         
     }
 
