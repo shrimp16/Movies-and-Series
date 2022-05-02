@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const app = express();
 
 const PORT = 50000;
@@ -15,30 +15,4 @@ app.use(express.static(__dirname + '/Routers/WEB-PAGE'));
 
 app.use(pageRouter);
 app.use(usersRouter);
-app.use(uploadRouter);*/
-
-const dbManager = require('./Users/dbManager');
-
-console.log(dbManager.getUsers());
-console.log("---------------------------------------")
-console.log(dbManager.getUserById(1));
-
-
-console.log(dbManager.usernameExists('shasdfsadrimpppppp'));
-
-/*function saveData(data) {
-    console.log(data);
-}
-
-dbManager.getUsers(saveData);*/
-
-/*const data = {
-    title: "Yeaasdfasdh",
-    rate: 10,
-    image: "insert good image",
-    ownerID: 1
-}
-
-dbManager.addContent(data);*/
-
-//dbManager.removeContent(3);
+app.use(uploadRouter);

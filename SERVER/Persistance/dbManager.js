@@ -19,7 +19,7 @@ module.exports = {
     },
     getUserByName: (username) => {
         return syncSql.mysql(config, `SELECT * FROM users WHERE username="${username}"`).data.rows[0];
-    }
+    },
     usernameExists: (username) => {
         let exists = syncSql.mysql(config, `SELECT * FROM users WHERE username="${username}"`).data.rows;
         if(exists.length > 0){
