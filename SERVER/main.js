@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 
-const mysql = require('mysql');
-
 const PORT = 50000;
 
 const pageRouter = require('./Routers/pageRouter');
