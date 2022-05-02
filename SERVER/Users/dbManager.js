@@ -1,24 +1,21 @@
 const mysql = require('mysql');
+const syncSql = require('sync-sql');
 
-const db = mysql.createConnection({
+const config = {
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'movies_series'
-});
+}
+
+const db = mysql.createConnection(config);
 
 module.exports = {
-    getUsers: (cb) => {
-        db.query('SELECT * FROM users', (err, result) => {
-            if(err) throw err;
-            cb(result);
-        });
+    getUsers: () => {
+        return syncSql.mysql(config, 'SELECT * FROM users').data.rows;
     },
-    getUserById: (id, cb) => {
-        db.query(`SELECT * FROM users WHERE userID=${id}`, (err, result) => {
-            if(err) throw err;
-            cb(result);
-        });
+    getUserById: (id) => {
+        return syncSql.mysql(config, `SELECT * FROM users WHERE userID=${id}`).data.rows; 
     },
     addUser: (data) => {
         db.query(`INSERT INTO users SET ?`, data, (err, result) => {
