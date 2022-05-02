@@ -17,6 +17,13 @@ module.exports = {
     getUserById: (id) => {
         return syncSql.mysql(config, `SELECT * FROM users WHERE userID=${id}`).data.rows; 
     },
+    usernameExists: (username) => {
+        let exists = syncSql.mysql(config, `SELECT * FROM users WHERE username="${username}"`).data.rows;
+        if(exists.length > 0){
+            return true;
+        }
+        return false;
+    },
     addUser: (data) => {
         db.query(`INSERT INTO users SET ?`, data, (err, result) => {
             if(err) throw err;

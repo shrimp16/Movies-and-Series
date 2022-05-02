@@ -23,11 +23,8 @@ console.log(dbManager.getUsers());
 console.log("---------------------------------------")
 console.log(dbManager.getUserById(1));
 
-const data = {
-    username: "shrimpppppp",
-    password: "shrimp"
-}
-dbManager.addUser(data);
+
+console.log(dbManager.usernameExists('shasdfsadrimpppppp'));
 
 /*function saveData(data) {
     console.log(data);
