@@ -26,10 +26,12 @@ const dbManager = require('./Users/dbManager');
 dbManager.getUsers(saveData);*/
 
 const data = {
-    title: "Yeah",
+    title: "Yeaasdfasdh",
     rate: 10,
     image: "insert good image",
     ownerID: 1
 }
 
 dbManager.addContent(data);
+
+//dbManager.removeContent(3);

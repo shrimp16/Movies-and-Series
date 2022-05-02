@@ -32,7 +32,10 @@ module.exports = {
             console.log(result);
         })
     },
-    removeContent: (user, content) => {
-
+    removeContent: (content) => {
+        db.query(`DELETE FROM content WHERE contentID=${content}`, (err, result) => {
+            if(err) throw err;
+            console.log(result);
+        })
     }
 }
