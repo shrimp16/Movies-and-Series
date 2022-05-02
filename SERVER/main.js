@@ -19,8 +19,17 @@ app.use(uploadRouter);*/
 
 const dbManager = require('./Users/dbManager');
 
-function saveData(data) {
+/*function saveData(data) {
     console.log(data);
 }
 
-dbManager.getUsers(saveData);
+dbManager.getUsers(saveData);*/
+
+const data = {
+    title: "Yeah",
+    rate: 10,
+    image: "insert good image",
+    ownerID: 1
+}
+
+dbManager.addContent(data);
