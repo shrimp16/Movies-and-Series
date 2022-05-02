@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 
 const PORT = 50000;
@@ -15,4 +15,12 @@ app.use(express.static(__dirname + '/Routers/WEB-PAGE'));
 
 app.use(pageRouter);
 app.use(usersRouter);
-app.use(uploadRouter);
+app.use(uploadRouter);*/
+
+const dbManager = require('./Users/dbManager');
+
+function saveData(data) {
+    console.log(data);
+}
+
+dbManager.getUsers(saveData);
