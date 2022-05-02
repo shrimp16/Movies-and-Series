@@ -15,6 +15,7 @@ module.exports = {
             content: []
         }
         
+        //change
         users.push(newUser);
         fileManager.updateFile(users);
         
@@ -22,6 +23,7 @@ module.exports = {
     },
     login: (username, password) => {
         
+        //change
         let users = fileManager.getUsers();
         for(let i = 0; i < users.length; i++){
             if(users[i].username === username && users[i].password === password){
@@ -36,6 +38,7 @@ module.exports = {
 
 function usernameExists(user){
 
+    //change
     let users = fileManager.getUsers();
 
     for(let i = 0; i < users.length; i++){

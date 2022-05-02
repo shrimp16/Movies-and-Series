@@ -7,3 +7,20 @@ const db = mysql.createConnection({
     database: 'movies_series'
 });
 
+module.exports = {
+    getUsers: () => {
+        
+    },
+    getUserById: (id) => {
+
+    },
+    addUser: (data) => {
+
+    },
+    addContent: (user, data) => {
+
+    },
+    removeContent: (user, content) => {
+        
+    }
+}
