@@ -1,7 +1,8 @@
 const express = require('express');
+const yargs = require('yargs');
 const app = express();
 
-const PORT = 12345;
+const PORT = yargs.argv._[0] || 50000;
 
 const pageRouter = require('./Routers/pageRouter');
 const usersRouter = require('./Routers/usersRouter');
