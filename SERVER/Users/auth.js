@@ -1,37 +1,40 @@
 const fileManager = require('./fileManager');
+const dbManager = require('../Persistance/dbManager');
 
 module.exports = {
     register: (username, password) => {
 
-        if(usernameExists(username)){
-            return "Username already exists!"
+        if(dbManager.usernameExists(username)){
+            return "Username already exists!";
         }
 
-        let users = fileManager.getUsers();
         let newUser = {
             username: username,
-            password: password,
-            id: users.length,
-            content: []
+            password: password
         }
         
-        //change
-        users.push(newUser);
-        fileManager.updateFile(users);
+        dbManager.addUser(newUser);
         
         return "User created with success!";
     },
     login: (username, password) => {
         
+        let user = dbManager.getUserByName(username);
+        console.log(user);
+        if(user.password === password){
+            return user.userID;
+        }
+
+        return false;
         //change
-        let users = fileManager.getUsers();
+       /* let users = fileManager.getUsers();
         for(let i = 0; i < users.length; i++){
             if(users[i].username === username && users[i].password === password){
                 return i;
             }
         }
 
-        return false;
+        return false;*/
 
     }
 }
