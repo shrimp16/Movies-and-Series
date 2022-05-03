@@ -1,4 +1,3 @@
-const fileManager = require('./fileManager');
 const dbManager = require('../Persistance/dbManager');
 
 module.exports = {
@@ -26,30 +25,6 @@ module.exports = {
         }
 
         return false;
-        //change
-       /* let users = fileManager.getUsers();
-        for(let i = 0; i < users.length; i++){
-            if(users[i].username === username && users[i].password === password){
-                return i;
-            }
-        }
-
-        return false;*/
 
     }
-}
-
-function usernameExists(user){
-
-    //change
-    let users = fileManager.getUsers();
-
-    for(let i = 0; i < users.length; i++){
-        if(users[i].username === user){
-            return true;
-        }
-    }
-
-    return false;
-
 }
