@@ -4,7 +4,6 @@ const upload = require('../Storage/storageManager');
 const jsonParser = require('body-parser').json();
 
 const usersManager = require('../Users/users');
-const fileManager = require('../Users/fileManager');
 
 router.post('/file/', upload.single('image'), (req, res) => {
 
@@ -13,13 +12,6 @@ router.post('/file/', upload.single('image'), (req, res) => {
 })
 
 router.post('/add-content', jsonParser, (req, res) => {
-
-    /*let users = fileManager.getUsers();
-    let content = req.body.content;
-
-    users[req.params.id].content.push(content);
-
-    fileManager.updateFile(users);*/
 
     usersManager.addContent(req.body.content);
 

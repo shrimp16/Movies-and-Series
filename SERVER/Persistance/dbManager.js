@@ -30,19 +30,16 @@ module.exports = {
     addUser: (data) => {
         db.query(`INSERT INTO users SET ?`, data, (err, result) => {
             if(err) throw err;
-            console.log(result);
         });
     },
     addContent: (data) => {
         db.query(`INSERT INTO content SET ?`, data, (err, result) => {
             if(err) throw err;
-            console.log(result);
         })
     },
     removeContent: (contentID) => {
         db.query(`DELETE FROM content WHERE contentID=${contentID}`, (err, result) => {
             if(err) throw err;
-            console.log(result);
         })
     },
     getUserContent: (userID) => {
