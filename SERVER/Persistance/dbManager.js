@@ -39,10 +39,13 @@ module.exports = {
             console.log(result);
         })
     },
-    removeContent: (content) => {
-        db.query(`DELETE FROM content WHERE contentID=${content}`, (err, result) => {
+    removeContent: (contentID) => {
+        db.query(`DELETE FROM content WHERE contentID=${contentID}`, (err, result) => {
             if(err) throw err;
             console.log(result);
         })
+    },
+    getUserContent: (userID) => {
+        return syncSql.mysql(config, `SELECT * FROM content WHERE ownerID=${userID}`).data.rows;
     }
 }

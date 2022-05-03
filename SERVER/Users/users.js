@@ -1,18 +1,24 @@
 const fileManager = require('./fileManager')
+const dbManager = require('../Persistance/dbManager');
 
 module.exports = {
-    addContent: (userID, content) => {
+    addContent: (content) => {
 
-        let users = fileManager.getUsers();
+        console.log(content);
+        dbManager.addContent(content);
+
+        /*let users = fileManager.getUsers();
         
         users[userID].content.push(content);
 
-        fileManager.updateFile(users);
+        fileManager.updateFile(users);*/
 
     },
-    removeContent: (userID, contentID) => {
+    removeContent: (contentID) => {
         
-        let users = fileManager.getUsers();
+        dbManager.removeContent(contentID);
+        
+        /*let users = fileManager.getUsers();
 
         if(contentID === 0){
             users[userID].content.shift();
@@ -20,18 +26,11 @@ module.exports = {
             users[userID].content.splice(contentID, 1);
         }
 
-        fileManager.updateFile(users);
+        fileManager.updateFile(users);*/
     },
     getUserContent: (userID) => {
 
-        let user = fileManager.getUserById(userID);
-
-        let userData = {
-            username: user.username,
-            content: user.content
-        }
-
-        return userData;
+        return dbManager.getUserContent(userID);
         
     }
 

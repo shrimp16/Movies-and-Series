@@ -12,14 +12,16 @@ router.post('/file/', upload.single('image'), (req, res) => {
 
 })
 
-router.post('/add-content/:id', jsonParser, (req, res) => {
+router.post('/add-content', jsonParser, (req, res) => {
 
-    let users = fileManager.getUsers();
+    /*let users = fileManager.getUsers();
     let content = req.body.content;
 
     users[req.params.id].content.push(content);
 
-    fileManager.updateFile(users);
+    fileManager.updateFile(users);*/
+
+    usersManager.addContent(req.body.content);
 
     res.send("Added content with success!");
 

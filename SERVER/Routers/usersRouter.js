@@ -21,9 +21,17 @@ router.post('/login', jsonParser, (req, res) => {
 
 })
 
-router.get('/user/:id', (req, res) => {
+router.get('/user-content/:id', (req, res) => {
     
     res.send(userManager.getUserContent(req.params.id));
+
+})
+
+router.delete('/remove-content/:id', (req, res) => {
+
+    userManager.removeContent(req.params.id);
+
+    res.send("Content deleted!");
 
 })
 
