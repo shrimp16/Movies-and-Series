@@ -1,0 +1,15 @@
+{
+    "GET": {
+        "WEB-PAGE": "/",
+        "CONTENT": "/user-content/:id"
+    },
+    "POST": {
+        "UPLOAD FILE": "/file",
+        "ADD CONTENT": "/add-content",
+        "LOGIN": "/login",
+        "REGISTER": "register"
+    },
+    "DELETE": {
+        "REMOVE CONTENT": "/remove-content/:id"
+    }
+}
