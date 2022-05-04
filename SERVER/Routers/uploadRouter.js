@@ -3,9 +3,9 @@ const router = express.Router();
 const upload = require('../Storage/storageManager');
 const jsonParser = require('body-parser').json();
 
-const dbManager = require('../Persistance/dbManager');
+const dbManager = require('../Users/Persistance/dbManager');
 
-router.post('/file/', upload.single('image'), (req, res) => {
+router.post('/file', upload.single('image'), (req, res) => {
 
     res.send(req.file.filename);
 

@@ -14,3 +14,8 @@ FOREIGN KEY(ownerID) REFERENCES users(userID))
 
 INSERT INTO users SET username = 'user', password = 'pass', picture = "default"
 INSERT INTO content SET title = 'Title', rate = 10, image = 'Name of the image', ownerID = 1
+
+--Reset both tables--
+DROP TABLE content
+TRUNCATE TABLE users
+--Then create again the content table--

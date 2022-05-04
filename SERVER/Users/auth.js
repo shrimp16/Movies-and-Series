@@ -1,4 +1,4 @@
-const dbManager = require('../Persistance/dbManager');
+const dbManager = require('../Users/Persistance/dbManager');
 
 module.exports = {
     register: (username, password) => {
@@ -9,7 +9,8 @@ module.exports = {
 
         let newUser = {
             username: username,
-            password: password
+            password: password,
+            picture: 'default'
         }
         
         dbManager.addUser(newUser);
