@@ -1,4 +1,4 @@
-const dbManager = require('../Persistance/dbManager');
+const dbManager = require('./Persistance/dbManager');
 
 module.exports = {
     addContent: (content) => {

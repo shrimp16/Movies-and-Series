@@ -3,7 +3,7 @@ const router = express.Router();
 const jsonParser = require('body-parser').json();
 
 const authManager = require('../Users/auth');
-const userManager = require('../Users/users');
+const dbManager = require('../Persistance/dbManager');
 
 router.post('/register', jsonParser, (req, res) => {
     res.send(authManager.register(req.body.username, req.body.password));
@@ -23,13 +23,13 @@ router.post('/login', jsonParser, (req, res) => {
 
 router.get('/user-content/:id', (req, res) => {
     
-    res.send(userManager.getUserContent(req.params.id));
+    res.send(dbManager.getUserContent(req.params.id));
 
 })
 
 router.delete('/remove-content/:id', (req, res) => {
 
-    userManager.removeContent(req.params.id);
+    dbManager.removeContent(req.params.id);
 
     res.send("Content deleted!");
 

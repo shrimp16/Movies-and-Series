@@ -3,7 +3,7 @@ const router = express.Router();
 const upload = require('../Storage/storageManager');
 const jsonParser = require('body-parser').json();
 
-const usersManager = require('../Users/users');
+const dbManager = require('../Persistance/dbManager');
 
 router.post('/file/', upload.single('image'), (req, res) => {
 
@@ -13,7 +13,7 @@ router.post('/file/', upload.single('image'), (req, res) => {
 
 router.post('/add-content', jsonParser, (req, res) => {
 
-    usersManager.addContent(req.body.content);
+    dbManager.addContent(req.body.content);
 
     res.send("Added content with success!");
 
