@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const upload = require('../Storage/storageManager');
+const upload = require('../Users/Persistance/uploadManager');
 const jsonParser = require('body-parser').json();
 
 const dbManager = require('../Users/Persistance/dbManager');
 
 router.post('/file', upload.single('image'), (req, res) => {
 
-    res.send(req.file.filename);
+    console.log(req.file.buffer.toString('base64'));
+    console.log(req.body);
+    res.send("xd");
 
 })
 

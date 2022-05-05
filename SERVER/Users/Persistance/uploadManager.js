@@ -1,6 +1,6 @@
 const multer = require('multer');
 
-const fileStorageEngine = multer.diskStorage({
+/*const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, '../SERVER/Storage/IMAGES');
     },
@@ -9,6 +9,8 @@ const fileStorageEngine = multer.diskStorage({
     }
 })
 
-const upload = multer({storage: fileStorageEngine});
+const upload = multer({storage: fileStorageEngine});*/
+
+const upload = multer({storage:multer.memoryStorage()});
 
 module.exports = upload;
