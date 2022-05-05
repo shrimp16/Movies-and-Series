@@ -32,6 +32,11 @@ module.exports = {
             if(err) throw err;
         });
     },
+    updateProfile: (profile) => {
+        db.query(`INSERT INTO profiles SET ?`, profile, (err, result) => {
+            if(err) throw err;
+        })
+    },
     addContent: (data) => {
         db.query(`INSERT INTO content SET ?`, data, (err, result) => {
             if(err) throw err;

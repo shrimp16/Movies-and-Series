@@ -4,6 +4,7 @@ const jsonParser = require('body-parser').json();
 
 const authManager = require('../Users/auth');
 const dbManager = require('../Users/Persistance/dbManager');
+const upload = require('../Users/Persistance/uploadManager');
 
 router.post('/register', jsonParser, (req, res) => {
     res.send(authManager.register(req.body.username, req.body.password));
