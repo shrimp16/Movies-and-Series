@@ -8,7 +8,7 @@ const dbManager = require('../Users/Persistance/dbManager');
 router.post('/file', upload.single('image'), (req, res) => {
 
     console.log(req.file.buffer.toString('base64'));
-    console.log(req.body);
+    console.log(req.body.thing);
     res.send("xd");
 
 })
