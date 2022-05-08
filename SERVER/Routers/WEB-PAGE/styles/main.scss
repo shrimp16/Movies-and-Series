@@ -1,3 +1,13 @@
-@use './base';
-@use './layout/';
-@use './components/';
+@use './base' as *;
+@use './layout/' as *;
+@use './components/' as *;
+@use './utils/' as *;
+
+.user {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+
+    @include border();
+
+}
