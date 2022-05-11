@@ -45,4 +45,10 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.logo-image {
+  height: 5rem;
+  width: 6rem;
+  margin: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
