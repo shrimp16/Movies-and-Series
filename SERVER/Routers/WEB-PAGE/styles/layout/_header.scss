@@ -18,3 +18,18 @@ header {
         transform: translateY(-70%);
     }
 }
+
+.search {
+    margin: 1.5rem;
+    margin-left: 3.5rem;
+
+    input {
+        width: 35rem;
+        font-size: 1.7rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
