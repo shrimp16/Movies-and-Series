@@ -1,0 +1,20 @@
+@use '../utils/' as *;
+
+header {
+    display: flex;
+    flex-direction: row;
+    margin: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+
+    h1 {
+        font-family: $title-font;
+        font-size: 3rem;
+        height: 100%;
+        margin-top: 50%;
+        transform: translateY(-70%);
+    }
+}

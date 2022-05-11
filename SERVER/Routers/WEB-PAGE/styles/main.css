@@ -47,8 +47,25 @@ table {
   border-spacing: 0;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  margin: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+.logo h1 {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 3rem;
+  height: 100%;
+  margin-top: 50%;
+  transform: translateY(-70%);
+}
+
 .logo-image {
   height: 5rem;
   width: 6rem;
-  margin: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
