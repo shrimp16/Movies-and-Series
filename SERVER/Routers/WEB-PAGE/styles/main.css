@@ -71,10 +71,18 @@ header {
 }
 .search input {
   width: 35rem;
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 .search .icon {
   font-size: 2rem;
+  cursor: pointer;
+}
+
+.user {
+  margin-left: 2.5rem;
+  font-size: 1.5rem;
+  margin-top: 10%;
+  transform: translateY(-105%);
   cursor: pointer;
 }
 
