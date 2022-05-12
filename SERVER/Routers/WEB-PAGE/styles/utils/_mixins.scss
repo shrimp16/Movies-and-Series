@@ -22,3 +22,14 @@
         background: linear-gradient(360deg, $main-color, $secondary-color);
     }
 }
+
+@mixin border-bottom {
+    
+    position: relative;
+    background: white;
+
+    background-clip: padding-box;
+    border-bottom: solid 2px transparent;
+    border-image: linear-gradient(to left, $main-color, $secondary-color) 1 0;
+    
+}
