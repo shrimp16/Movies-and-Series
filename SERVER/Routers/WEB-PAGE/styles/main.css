@@ -50,7 +50,12 @@ table {
 header {
   display: flex;
   flex-direction: row;
-  border-bottom: 2px black solid;
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+  border-bottom: solid 2px transparent;
+  -o-border-image: linear-gradient(to left, rgb(128, 0, 255), royalblue) 1 0;
+     border-image: linear-gradient(to left, rgb(128, 0, 255), royalblue) 1 0;
   margin: 1rem;
   padding: 1rem;
 }

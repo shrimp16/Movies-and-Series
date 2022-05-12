@@ -3,7 +3,7 @@
 header {
     display: flex;
     flex-direction: row;
-    border-bottom: 2px black solid;
+    @include border-bottom();
     margin: 1rem;
     padding: 1rem;
 
