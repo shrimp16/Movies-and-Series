@@ -3,28 +3,32 @@
 header {
     display: flex;
     flex-direction: row;
-    margin: 1.5rem;
+    border-bottom: 2px black solid;
+    margin: 1rem;
+    padding: 1rem;
+
+    * {
+        margin: auto;
+    }
 }
 
 .logo {
     display: flex;
     flex-direction: row;
 
+    img {
+        margin-top: -0.5rem;
+    }
     h1 {
         font-family: $title-font;
         font-size: 3rem;
-        height: 100%;
-        margin-top: 50%;
-        transform: translateY(-70%);
     }
 }
 
 .search {
-    margin: 1.5rem;
-    margin-left: 3.5rem;
 
     input {
-        width: 35rem;
+        width: 50vw;
         font-size: 2rem;
     }
 
@@ -35,9 +39,17 @@ header {
 }
 
 .user {
-    margin-left: 2.5rem;
     font-size:1.5rem;
-    margin-top: 10%;
-    transform: translateY(-105%);
     cursor: pointer;
+}
+
+@media (max-width: 80rem){
+    header {
+        display: flex;
+        flex-direction: column;
+
+        * {
+            margin-top: 10px;
+        }
+    }
 }
