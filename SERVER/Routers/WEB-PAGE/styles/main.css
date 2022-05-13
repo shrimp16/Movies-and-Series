@@ -148,4 +148,47 @@ header * {
 }
 .register-button:hover {
   background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
+}
+
+.login-body {
+  width: 15rem;
+  margin: auto;
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+.login-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
+}
+.login-body * {
+  margin-top: 10px;
+}
+
+.login-title {
+  font-size: 2.5rem;
+}
+
+.login-button {
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, rgb(128, 0, 255), royalblue);
+  font-size: 1.25rem;
+  color: white;
+  border: 2px black solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.login-button:hover {
+  background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
 }/*# sourceMappingURL=main.css.map */
