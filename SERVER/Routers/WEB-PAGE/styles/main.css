@@ -98,13 +98,13 @@ header * {
     margin-top: 10px;
   }
 }
+.body {
+  width: 100%;
+}
+
 .logo-image {
   height: 5rem;
   width: 6rem;
-}
-
-.body {
-  width: 100%;
 }
 
 .register-body {
@@ -190,5 +190,48 @@ header * {
   cursor: pointer;
 }
 .login-button:hover {
+  background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
+}
+
+.forgot-password-body {
+  width: 20rem;
+  margin: auto;
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+.forgot-password-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
+}
+.forgot-password-body * {
+  margin-top: 10px;
+}
+
+.recovery-title {
+  font-size: 2.5rem;
+}
+
+.recovery-button {
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, rgb(128, 0, 255), royalblue);
+  font-size: 1.25rem;
+  color: white;
+  border: 2px black solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.recovery-button:hover {
   background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
 }/*# sourceMappingURL=main.css.map */
