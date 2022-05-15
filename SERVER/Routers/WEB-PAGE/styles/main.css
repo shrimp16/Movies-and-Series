@@ -150,19 +150,6 @@ header * {
   font-size: 2.5rem;
 }
 
-.register-button {
-  margin-bottom: 10px;
-  background: linear-gradient(45deg, rgb(128, 0, 255), royalblue);
-  font-size: 1.25rem;
-  color: white;
-  border: 2px black solid;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.register-button:hover {
-  background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
-}
-
 .login-body {
   width: 15rem;
   margin: auto;
@@ -193,19 +180,6 @@ header * {
   font-size: 2.5rem;
 }
 
-.login-button {
-  margin-bottom: 10px;
-  background: linear-gradient(45deg, rgb(128, 0, 255), royalblue);
-  font-size: 1.25rem;
-  color: white;
-  border: 2px black solid;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.login-button:hover {
-  background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
-}
-
 .forgot-password-body {
   width: 20rem;
   margin: auto;
@@ -234,17 +208,4 @@ header * {
 
 .recovery-title {
   font-size: 2.5rem;
-}
-
-.recovery-button {
-  margin-bottom: 10px;
-  background: linear-gradient(45deg, rgb(128, 0, 255), royalblue);
-  font-size: 1.25rem;
-  color: white;
-  border: 2px black solid;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.recovery-button:hover {
-  background: linear-gradient(45deg, royalblue, rgb(128, 0, 255));
 }/*# sourceMappingURL=main.css.map */

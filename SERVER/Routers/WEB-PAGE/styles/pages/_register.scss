@@ -14,17 +14,3 @@
 .register-title {
     font-size: 2.5rem;
 }
-
-.register-button {
-    margin-bottom: 10px;
-    background: linear-gradient(45deg, $main-color, $secondary-color);
-    font-size: 1.25rem;
-    color: white;
-    border: 2px black solid;
-    border-radius: 10px;
-    cursor: pointer;
-
-    &:hover {
-        background: linear-gradient(45deg, $secondary-color, $main-color)
-    }
-}
