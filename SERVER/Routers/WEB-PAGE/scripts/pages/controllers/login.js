@@ -42,6 +42,16 @@ export default class Login {
 
     success(id, username){
         document.querySelector('#auth-btn').innerHTML = username;
+
+        if(document.querySelector('#save-user').checked){
+            localStorage.setItem('username', username);
+            localStorage.setItem('userID', id);
+            console.log(localStorage);
+        }else {
+            sessionStorage.setItem('username', username);
+            sessionStorage.setItem('userID', id);
+            console.log(sessionStorage);
+        }
         window.location.href = '/#';
     }
 }
