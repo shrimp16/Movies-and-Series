@@ -1,3 +1,5 @@
+import Login from "./controllers/login.js";
+
 export default class Router {
 
     constructor() {
@@ -17,7 +19,7 @@ export default class Router {
                 //home page
                 break;
             case 'login':
-                //login page
+                new Login();
                 break;
             case 'register':
                 //register page
