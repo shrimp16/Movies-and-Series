@@ -27,8 +27,21 @@ export default class Login {
                 }
             }).then(response => response.text()
                 .then((response) => {
-                    alert(response);
+
+                    let id = parseInt(response);
+
+                    if(!isNaN(id)){
+                        this.success(id, document.querySelector('#login-un').value);
+                    }else {
+                        alert(response);
+                    }
+
                 }))
         })
+    }
+
+    success(id, username){
+        document.querySelector('#auth-btn').innerHTML = username;
+        window.location.href = '/#';
     }
 }
