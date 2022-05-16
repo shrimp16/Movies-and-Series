@@ -15,17 +15,30 @@ export default class Login {
     }
 
     preparePage() {
+        let usernameInput = document.querySelector('#login-un');
+        let passwordInput = document.querySelector('#login-pw');
+
+        usernameInput.addEventListener('keypress', (e) => {
+            if (e.key === "Enter") {
+                passwordInput.select();
+            }
+        })
+
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === "Enter") {
+                document.getElementById('submit-login').click();
+            }
+        })
+
         document.getElementById('submit-login').addEventListener('click', () => {
 
-            let usernameInput = document.querySelector('#login-un');
-            let passwordInput = document.querySelector('#login-pw');
 
-            if(!usernameInput.value){
+            if (!usernameInput.value) {
                 alert("Please insert username!");
                 return;
             }
 
-            if(!passwordInput.value){
+            if (!passwordInput.value) {
                 alert("Please insert password!");
                 return;
             }
@@ -44,9 +57,9 @@ export default class Login {
 
                     let id = parseInt(response);
 
-                    if(!isNaN(id)){
+                    if (!isNaN(id)) {
                         this.success(id, document.querySelector('#login-un').value);
-                    }else {
+                    } else {
                         alert(response);
                     }
 
@@ -54,13 +67,13 @@ export default class Login {
         })
     }
 
-    success(id, username){
+    success(id, username) {
         document.querySelector('#auth-btn').innerHTML = username;
 
-        if(document.querySelector('#save-user').checked){
+        if (document.querySelector('#save-user').checked) {
             localStorage.setItem('username', username);
             localStorage.setItem('userID', id);
-        }else {
+        } else {
             sessionStorage.setItem('username', username);
             sessionStorage.setItem('userID', id);
         }
