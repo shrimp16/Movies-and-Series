@@ -6,18 +6,21 @@ document.body.onload = () => {
 }
 
 function setupUserPanel() {
+
+    let authButton = document.querySelector('#auth-btn');
+
     if(localStorage.length > 0){
-        document.querySelector('#auth-btn').innerText = localStorage.getItem('username');
-        document.querySelector('#auth-btn').addEventListener('click', () => {
+        authButton.innerText = localStorage.getItem('username');
+        authButton.addEventListener('click', () => {
             alert('Logged in by local storage');
         })
     }else if(sessionStorage.length > 0){
-        document.querySelector('#auth-btn').innerText = sessionStorage.getItem('username');
-        document.querySelector('#auth-btn').addEventListener('click', () => {
+        authButton.innerText = sessionStorage.getItem('username');
+        authButton.addEventListener('click', () => {
             alert('Logged in by session storage');
         })
     }else {
-        document.querySelector('#auth-btn').addEventListener('click', () => {
+        authButton.addEventListener('click', () => {
             window.location.href = '/#login';
         })
     }
