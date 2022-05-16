@@ -10,7 +10,7 @@ export default class Router {
         this.routeChangeHandler();
     }
 
-    routeChangeHandler() {
+    async routeChangeHandler() {
         const hash = window.location.hash.substring(1);
         this.body.innerHTML = '';
 
@@ -19,6 +19,7 @@ export default class Router {
                 //home page
                 break;
             case 'login':
+                await this.loadPage('login');
                 new Login();
                 break;
             case 'register':
@@ -30,5 +31,14 @@ export default class Router {
             default:
                 //404 page
         }
+    }
+
+    async loadPage(page) {
+        await fetch(`/scripts/pages/structures/${page}.html`)
+            .then(response => response.text()
+                .then((response) => {
+                    this.body.innerHTML = response;
+                    console.log("xd");
+                }))
     }
 }

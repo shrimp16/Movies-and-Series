@@ -1,8 +1,6 @@
 export default class Login {
     constructor() {
-        this.body = document.querySelector('#body');
-        this.body.innerHTML = '';
-        this.loadPage();
+        this.preparePage();
     }
 
     async loadPage() {
