@@ -31,7 +31,16 @@ module.exports = {
     },
     login: (username, password) => {
 
+        console.log(username);
+        console.log(password);
+
         let user = dbManager.getUserByName(username);
+
+        console.log(user);
+
+        if(!user){
+            return false;
+        }
 
         if (user.password === password) {
             return user.userID;

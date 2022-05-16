@@ -1,6 +1,7 @@
 const express = require('express');
 const yargs = require('yargs');
 const app = express();
+const cors = require('cors');
 
 const PORT = yargs.argv._[0] || 50000;
 
@@ -13,6 +14,8 @@ app.listen(PORT, () => {
 })
 
 app.use(express.static(__dirname + '/Routers/WEB-PAGE'));
+
+app.use(cors());
 
 app.use(pageRouter);
 app.use(usersRouter);
