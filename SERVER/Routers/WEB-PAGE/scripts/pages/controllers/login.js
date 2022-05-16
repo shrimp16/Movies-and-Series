@@ -46,12 +46,11 @@ export default class Login {
         if(document.querySelector('#save-user').checked){
             localStorage.setItem('username', username);
             localStorage.setItem('userID', id);
-            console.log(localStorage);
         }else {
             sessionStorage.setItem('username', username);
             sessionStorage.setItem('userID', id);
-            console.log(sessionStorage);
         }
         window.location.href = '/#';
+        window.location.reload();
     }
 }
