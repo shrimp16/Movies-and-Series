@@ -1,18 +1,9 @@
 export default class Login {
     constructor() {
-        this.preparePage();
+        this.setupElements();
     }
 
-    async loadPage() {
-        await fetch('/scripts/pages/structures/login.html')
-            .then(response => response.text()
-                .then((response) => {
-                    this.body.innerHTML = response;
-                    this.preparePage();
-                }))
-    }
-
-    preparePage() {
+    setupElements() {
         let usernameInput = document.querySelector('#login-un');
         let passwordInput = document.querySelector('#login-pw');
 
