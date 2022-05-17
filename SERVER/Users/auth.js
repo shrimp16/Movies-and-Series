@@ -12,6 +12,10 @@ module.exports = {
             return "Username already exists!";
         }
 
+        if(dbManager.emailExists(email)) {
+            return "Email already exists!";
+        }
+
         let newUser = {
             username: username,
             email: email,

@@ -27,6 +27,13 @@ module.exports = {
         }
         return false;
     },
+    emailExists: (email) => {
+        let exists = syncSql.mysql(config, `SELECT * FROM users WHERE email="${email}"`).data.rows;
+        if(exists.length > 0){
+            return true;
+        }
+        return false;
+    },
     addUser: (data) => {
         db.query(`INSERT INTO users SET ?`, data, (err, result) => {
             if(err) throw err;
