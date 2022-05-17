@@ -31,7 +31,7 @@ export default class Router {
                 await this.loadPage('recovery');
                 break;
             default:
-                //404 page
+                await this.loadPage('404');
         }
     }
 
