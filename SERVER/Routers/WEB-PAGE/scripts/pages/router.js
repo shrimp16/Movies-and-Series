@@ -1,5 +1,6 @@
 import Login from './controllers/login.js';
 import Register from './controllers/register.js';
+import NotFound from './controllers/404.js';
 
 export default class Router {
 
@@ -32,6 +33,7 @@ export default class Router {
                 break;
             default:
                 await this.loadPage('404');
+                new NotFound();
         }
     }
 
