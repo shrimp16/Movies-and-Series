@@ -1,6 +1,7 @@
 CREATE TABLE users (
     userID int AUTO_INCREMENT,
     username VARCHAR(255),
+    email VARCHAR(255),
     password VARCHAR(255),
     PRIMARY KEY(userID)
 );
