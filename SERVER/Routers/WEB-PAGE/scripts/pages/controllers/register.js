@@ -47,6 +47,7 @@ export default class Register{
                 method: 'POST',
                 body: JSON.stringify({
                     'username': usernameInput.value,
+                    'email': emailInput.value,
                     'password': passwordInput.value
                 }),
                 headers: {
@@ -57,6 +58,10 @@ export default class Register{
                     alert(response);
                     if(response === 'User created with success!'){
                         window.location.href = '/#login';
+                    }else {
+                        usernameInput.value = '';
+                        emailInput.value = '';
+                        passwordInput.value = '';
                     }
                 }))
 
