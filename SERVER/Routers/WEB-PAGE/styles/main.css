@@ -215,4 +215,24 @@ body {
 
 .recovery-title {
   font-size: 2.5rem;
+}
+
+.not-found {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+.not-found * {
+  margin: 10px;
+}
+.not-found h1 {
+  font-size: 3.5rem;
+}
+.not-found h3 {
+  font-size: 2rem;
+}
+.not-found button {
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */
