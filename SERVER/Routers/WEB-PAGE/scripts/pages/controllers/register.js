@@ -26,6 +26,25 @@ export default class Register{
             }
         })
 
-        
+        document.getElementById('submit-register').addEventListener('click', () => {
+
+            if(!usernameInput.value){
+                alert('Please insert username!');
+                return;
+            }
+
+            if(!emailInput.value){
+                alert('Please insert email!');
+                return;
+            }
+
+            if(!passwordInput.value){
+                alert('Please insert password!');
+                return;
+            }
+
+        })
+
+
     }
 }
