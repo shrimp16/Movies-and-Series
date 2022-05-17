@@ -1,4 +1,5 @@
-import Login from "./controllers/login.js";
+import Login from './controllers/login.js';
+import Register from './controllers/register.js';
 
 export default class Router {
 
@@ -23,10 +24,11 @@ export default class Router {
                 new Login();
                 break;
             case 'register':
-                //register page
+                await this.loadPage('register');
+                new Register();
                 break;
             case 'recovery':
-                //recovery page
+                await this.loadPage('recovery');
                 break;
             default:
                 //404 page
@@ -38,7 +40,6 @@ export default class Router {
             .then(response => response.text()
                 .then((response) => {
                     this.body.innerHTML = response;
-                    console.log("xd");
                 }))
     }
 }
