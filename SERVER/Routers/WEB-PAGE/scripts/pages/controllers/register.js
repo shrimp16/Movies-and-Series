@@ -43,6 +43,23 @@ export default class Register{
                 return;
             }
 
+            fetch('http://192.168.1.103:50000/register', {
+                method: 'POST',
+                body: JSON.stringify({
+                    'username': usernameInput.value,
+                    'password': passwordInput.value
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            }).then(response => response.text()
+                .then((response) => {
+                    alert(response);
+                    if(response === 'User created with success!'){
+                        window.location.href = '/#login';
+                    }
+                }))
+
         })
 
 
