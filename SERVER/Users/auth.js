@@ -6,7 +6,7 @@ const defaultProfile = {
 }
 
 module.exports = {
-    register: (username, password) => {
+    register: (username, password, email) => {
 
         if (dbManager.usernameExists(username)) {
             return "Username already exists!";
@@ -14,6 +14,7 @@ module.exports = {
 
         let newUser = {
             username: username,
+            email: email,
             password: password
         }
 

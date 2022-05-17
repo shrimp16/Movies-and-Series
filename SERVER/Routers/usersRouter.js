@@ -7,7 +7,7 @@ const dbManager = require('../Users/Persistance/dbManager');
 const upload = require('../Users/Persistance/uploadManager');
 
 router.post('/register', jsonParser, (req, res) => {
-    res.send(authManager.register(req.body.username, req.body.password));
+    res.send(authManager.register(req.body.username, req.body.password, req.body.email));
 })
 
 router.post('/login', jsonParser, (req, res) => {
