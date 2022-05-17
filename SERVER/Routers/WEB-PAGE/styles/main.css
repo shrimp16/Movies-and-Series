@@ -67,6 +67,7 @@ header * {
 .logo {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 .logo img {
   margin-top: -0.5rem;
@@ -91,7 +92,7 @@ header * {
   cursor: pointer;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 85rem) {
   header {
     display: flex;
     flex-direction: column;
