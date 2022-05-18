@@ -75,6 +75,7 @@ header * {
 .logo h1 {
   font-family: "Shadows Into Light", cursive;
   font-size: 3rem;
+  text-align: center;
 }
 
 .search input {
@@ -279,7 +280,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   margin: auto;
-  margin-top: 1rem;
+  margin: 1rem;
 }
 .profile-body .card {
   margin: auto;
