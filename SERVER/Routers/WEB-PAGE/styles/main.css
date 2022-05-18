@@ -248,7 +248,7 @@ body {
   aspect-ratio: 16/9;
   width: 40rem;
   height: 15rem;
-  border-radius: 30px;
+  border-radius: 15px;
 }
 
 .profile-picture {
@@ -260,7 +260,7 @@ body {
   width: 7.5rem;
   height: 7.5rem;
   border: 4px whitesmoke solid;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .user-info {
