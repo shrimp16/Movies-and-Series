@@ -1,0 +1,42 @@
+@use '../utils/' as *;
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    img {
+        aspect-ratio: 16/9;
+        width: 40rem;
+        height: 15rem;
+        border-radius: 30px;
+    }
+}
+
+.profile-picture {
+    position: absolute;
+    margin-top: 10rem;
+    img {
+        aspect-ratio: 1/1;
+        width: 7.5rem;
+        height: 7.5rem;
+        border: 4px whitesmoke solid;
+        border-radius: 50px;
+    }
+}
+
+.user-info {
+    margin-top: 2.5rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        width: 30rem;
+        font-size: 1.25rem;
+    }
+}
