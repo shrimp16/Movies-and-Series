@@ -18,6 +18,7 @@
 .profile-picture {
     position: absolute;
     margin-top: 10rem;
+
     img {
         aspect-ratio: 1/1;
         width: 7.5rem;
@@ -38,5 +39,23 @@
     h2 {
         width: 30rem;
         font-size: 1.25rem;
+    }
+}
+
+.profile-body {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin: auto;
+    margin-top: 1rem;
+
+
+    .card {
+        margin: auto;
+        margin-top: 1rem;
+        height: 25rem;
+        width: 15rem;
+        border: 3px black solid;
     }
 }
