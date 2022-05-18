@@ -1,7 +1,7 @@
 import Router from './pages/router.js';
 
 document.body.onload = () => {
-    //new Router();
+    new Router();
     setupUserPanel();
 }
 
@@ -12,12 +12,12 @@ function setupUserPanel() {
     if(localStorage.length > 0){
         authButton.innerText = localStorage.getItem('username');
         authButton.addEventListener('click', () => {
-            alert('Logged in by local storage');
+            window.location.href = `/#profile/${localStorage.userID}`
         })
     }else if(sessionStorage.length > 0){
         authButton.innerText = sessionStorage.getItem('username');
         authButton.addEventListener('click', () => {
-            alert('Logged in by session storage');
+            window.location.href = `/#profile/${sessionStorage.userID}`
         })
     }else {
         authButton.addEventListener('click', () => {

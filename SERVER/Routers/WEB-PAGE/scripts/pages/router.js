@@ -1,6 +1,7 @@
 import Login from './controllers/login.js';
 import Register from './controllers/register.js';
 import NotFound from './controllers/404.js';
+import Profile from './controllers/profiles.js';
 
 export default class Router {
 
@@ -14,9 +15,13 @@ export default class Router {
 
     async routeChangeHandler() {
         const hash = window.location.hash.substring(1);
+        const hashArr = Array.from(hash.split('/'));
+
+        console.log(hashArr);
+
         this.body.innerHTML = '';
 
-        switch (hash) {
+        switch (hashArr[0]) {
             case '':
                 //home page
                 break;
@@ -30,6 +35,10 @@ export default class Router {
                 break;
             case 'recovery':
                 await this.loadPage('recovery');
+                break;
+            case 'profile':
+                await this.loadPage('profile');
+                new Profile(hashArr[1]);
                 break;
             default:
                 await this.loadPage('404');
