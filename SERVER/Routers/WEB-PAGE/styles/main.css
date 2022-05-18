@@ -333,6 +333,16 @@ body {
   opacity: 1;
 }
 
+.user-profile-panel {
+  margin-top: 1rem;
+}
+.user-profile-panel * {
+  margin-left: 15px;
+}
+.user-profile-panel button {
+  width: 7.5rem;
+}
+
 @media (max-width: 50rem) {
   .profile-header {
     display: flex;

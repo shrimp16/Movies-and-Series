@@ -93,6 +93,18 @@
     }
 }
 
+.user-profile-panel {
+    margin-top: 1rem;
+
+    * {
+        margin-left: 15px;
+    }
+
+    button {
+        width: 7.5rem;
+    }
+}
+
 @media (max-width: 50rem){
     .profile-header {
         display: flex;
