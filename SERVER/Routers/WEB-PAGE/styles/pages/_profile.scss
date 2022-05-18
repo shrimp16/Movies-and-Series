@@ -48,8 +48,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     margin: auto;
-    margin: 1rem;
-
 
     .card {
         margin: auto;
@@ -57,5 +55,49 @@
         height: 25rem;
         width: 15rem;
         border: 3px black solid;
+    }
+}
+
+@media (max-width: 50rem){
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .background {
+        img {
+            aspect-ratio: 16/9;
+            width: 20rem;
+            height: 7.5rem;
+            border-radius: 30px;
+        }
+    }
+    
+    .profile-picture {
+        position: absolute;
+        margin-top: 5rem;
+    
+        img {
+            aspect-ratio: 1/1;
+            width: 3.75rem;
+            height: 3.75rem;
+            border: 2px whitesmoke solid;
+            border-radius: 50px;
+        }
+    }
+    
+    .user-info {
+        margin-top: 1.25rem;
+        text-align: center;
+    
+        h1 {
+            font-size: 1.25rem;
+        }
+    
+        h2 {
+            width: 15rem;
+            font-size: 1rem;
+        }
     }
 }
