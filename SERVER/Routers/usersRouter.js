@@ -24,7 +24,13 @@ router.post('/login', jsonParser, (req, res) => {
 
 router.get('/user-content/:id', (req, res) => {
     
-    res.send(dbManager.getUserContent(req.params.id));
+    res.send(dbManager.getContent(req.params.id));
+
+})
+
+router.get('/user-content/list/:id', (req, res) => {
+
+    res.send(dbManager.getUserContent(req.params.id))
 
 })
 

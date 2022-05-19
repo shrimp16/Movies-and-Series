@@ -54,7 +54,10 @@ module.exports = {
             if(err) throw err;
         })
     },
-    getUserContent: (userID) => {
-        return syncSql.mysql(config, `SELECT * FROM content WHERE ownerID=${userID}`).data.rows;
+    getUserContent: (id) => {
+        return syncSql.mysql(config, `SELECT contentID FROM content WHERE ownerID=${id}`).data.rows;
+    },
+    getContent: (id) => {
+        return syncSql.mysql(config, `SELECT * FROM content WHERE contentID=${id}`).data.rows;
     }
 }

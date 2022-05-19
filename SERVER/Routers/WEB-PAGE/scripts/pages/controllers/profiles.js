@@ -11,8 +11,15 @@ export default class Profile {
         this.loadProfile();
     }
 
-    loadProfile() {
-        
+    async loadProfile() {
+        await fetch('http://192.168.1.103:50000/user-content/2')
+        .then(response => response.json()
+        .then((response) => {
+            console.log(response);
+            for(let i = 0; i < response.length; i++){
+                this.createCard(response[i].image, response[i].title);
+            }
+        }))
     }
 
     loadOwnProfile() {
@@ -29,7 +36,7 @@ export default class Profile {
         newCard.classList.add('card');
 
         let img = new Image();
-        img.src = imageSrc;
+        img.src = `data:image/png;base64,${imageSrc}`;
 
         let cardText = document.createElement('div');
         cardText.classList.add('card-title');
