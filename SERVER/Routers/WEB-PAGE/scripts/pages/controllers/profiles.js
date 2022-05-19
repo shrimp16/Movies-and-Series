@@ -32,15 +32,6 @@ export default class Profile {
 
     }
 
-
-    /*<div class="card">
-        <img src="https://picsum.photos/500?random=1" alt="">
-        <div class="card-title">
-            Lorem ipsum dolor sit.
-        </div>
-    </div>
-    */
-
     loadOwnProfile() {
         const HTML = `<div class="user-profile-panel">
         <button class="blue-purple-btn" id="new-show">New Show</button>
