@@ -25,15 +25,6 @@ export default class Profile {
                 }))
             }
         }))
-
-        /*await fetch('http://192.168.1.103:50000/user-content/2')
-        .then(response => response.json()
-        .then((response) => {
-            console.log(response);
-            for(let i = 0; i < response.length; i++){
-                this.createCard(response[i].image, response[i].title);
-            }
-        }))*/
     }
 
     loadOwnProfile() {
