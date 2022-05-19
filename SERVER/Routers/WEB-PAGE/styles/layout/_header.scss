@@ -8,7 +8,7 @@ header {
     padding: 1rem;
 
     background-color: whitesmoke;
-    
+
     * {
         margin: auto;
     }
@@ -21,7 +21,10 @@ header {
 
     img {
         margin-top: -0.5rem;
+        height: 5rem;
+        width: 6rem;
     }
+
     h1 {
         font-family: $title-font;
         font-size: 3rem;
@@ -44,17 +47,39 @@ header {
 }
 
 .user {
-    font-size:1.5rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-@media (max-width: 85rem){
+@media (max-width: 85rem) {
     header {
         display: flex;
         flex-direction: column;
 
         * {
             margin-top: 10px;
+        }
+    }
+
+    .logo {
+        h1 {
+            font-size: 2rem;
+        }
+
+        img {
+            height: 3rem;
+            width: 3.5rem;
+            margin-top: 0;
+        }
+    }
+
+    .search {
+        input {
+            font-size: 1.5rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
         }
     }
 }

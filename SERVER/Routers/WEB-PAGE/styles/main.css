@@ -71,6 +71,8 @@ header * {
 }
 .logo img {
   margin-top: -0.5rem;
+  height: 5rem;
+  width: 6rem;
 }
 .logo h1 {
   font-family: "Shadows Into Light", cursive;
@@ -101,6 +103,22 @@ header * {
   header * {
     margin-top: 10px;
   }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+  .logo img {
+    height: 3rem;
+    width: 3.5rem;
+    margin-top: 0;
+  }
+
+  .search input {
+    font-size: 1.5rem;
+  }
+  .search .icon {
+    font-size: 1.5rem;
+  }
 }
 body {
   background-color: whitesmoke;
@@ -108,11 +126,6 @@ body {
 
 .body {
   width: 100%;
-}
-
-.logo-image {
-  height: 5rem;
-  width: 6rem;
 }
 
 .blue-purple-btn {
