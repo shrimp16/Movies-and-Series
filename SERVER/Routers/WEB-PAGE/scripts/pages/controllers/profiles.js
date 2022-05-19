@@ -6,30 +6,13 @@ export default class Profile {
 
     verifyProfile(id) {
         if(id === localStorage.getItem('userID') || id === sessionStorage.getItem('userID')){
-            alert('Loading user profile');
             this.loadOwnProfile();
-        }else {
-            alert('Loading someone else profile');
         }
         this.loadProfile();
     }
 
     loadProfile() {
-        let newCard = document.createElement('div');
-        newCard.classList.add('card');
-
-        let img = new Image();
-        img.src = 'https://picsum.photos/500?random=1';
-
-        let cardText = document.createElement('div');
-        cardText.classList.add('card-title');
-        cardText.innerText = 'Lorem ipsum dolot sit.'
-
-        newCard.appendChild(img);
-        newCard.appendChild(cardText);
-
-        this.body.appendChild(newCard);
-
+        
     }
 
     loadOwnProfile() {
@@ -39,5 +22,22 @@ export default class Profile {
         <button class="blue-purple-btn" id="log-out">Log out</button>
         </div>`;
         document.getElementById('profile-header').innerHTML = document.getElementById('profile-header').innerHTML + HTML;
+    }
+
+    createCard(imageSrc, title){
+        let newCard = document.createElement('div');
+        newCard.classList.add('card');
+
+        let img = new Image();
+        img.src = imageSrc;
+
+        let cardText = document.createElement('div');
+        cardText.classList.add('card-title');
+        cardText.innerText = title;
+
+        newCard.appendChild(img);
+        newCard.appendChild(cardText);
+
+        this.body.appendChild(newCard);
     }
 }
