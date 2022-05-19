@@ -8,18 +8,32 @@ export default class Profile {
         if(id === localStorage.getItem('userID') || id === sessionStorage.getItem('userID')){
             this.loadOwnProfile();
         }
-        this.loadProfile();
+        this.loadProfile(id);
     }
 
-    async loadProfile() {
-        await fetch('http://192.168.1.103:50000/user-content/2')
+    async loadProfile(id) {
+        await fetch(`http://192.168.1.103:50000/user-content/list/${id}`)
+        .then(response => response.json()
+        .then(async (response) => {
+            console.log(response);
+            for(let i = 0; i < response.length; i++){
+                await fetch(`http://192.168.1.103:50000/user-content/${response[i].contentID}`)
+                .then(response => response.json()
+                .then((response) => {
+                    console.log(response);
+                    this.createCard(response[0].image, response[0].title);
+                }))
+            }
+        }))
+
+        /*await fetch('http://192.168.1.103:50000/user-content/2')
         .then(response => response.json()
         .then((response) => {
             console.log(response);
             for(let i = 0; i < response.length; i++){
                 this.createCard(response[i].image, response[i].title);
             }
-        }))
+        }))*/
     }
 
     loadOwnProfile() {
