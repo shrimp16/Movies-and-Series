@@ -40,6 +40,12 @@ export default class Router {
                 await this.loadPage('profile');
                 new Profile(hashArr[1]);
                 break;
+            case 'show-creator':
+                await this.loadPage('show-creator');
+                break;
+            case 'profile-editor':
+                await this.loadPage('profile-editor');
+                break;
             default:
                 await this.loadPage('404');
                 new NotFound();

@@ -36,11 +36,11 @@ export default class Profile {
         document.getElementById('profile-header').innerHTML = document.getElementById('profile-header').innerHTML + HTML;
 
         document.getElementById('new-show').addEventListener('click', () => {
-            alert("new show");
+            window.location.href = '/#show-creator';
         }) 
 
         document.getElementById('edit-profile').addEventListener('click', () => {
-            alert("edit profile");
+            window.location.href = '/#profile-editor';
         })
 
         document.getElementById('log-out').addEventListener('click', () => {
