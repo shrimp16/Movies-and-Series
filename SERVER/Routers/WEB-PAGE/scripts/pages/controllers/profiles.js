@@ -44,7 +44,10 @@ export default class Profile {
         })
 
         document.getElementById('log-out').addEventListener('click', () => {
-            alert("log out")
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = '/#login';
+            window.location.reload();
         })
     }
 
