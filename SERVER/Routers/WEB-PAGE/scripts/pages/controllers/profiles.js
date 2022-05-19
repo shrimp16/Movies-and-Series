@@ -34,6 +34,18 @@ export default class Profile {
         <button class="blue-purple-btn" id="log-out">Log out</button>
         </div>`;
         document.getElementById('profile-header').innerHTML = document.getElementById('profile-header').innerHTML + HTML;
+
+        document.getElementById('new-show').addEventListener('click', () => {
+            alert("new show");
+        }) 
+
+        document.getElementById('edit-profile').addEventListener('click', () => {
+            alert("edit profile");
+        })
+
+        document.getElementById('log-out').addEventListener('click', () => {
+            alert("log out")
+        })
     }
 
     createCard(imageSrc, title){
