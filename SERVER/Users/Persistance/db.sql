@@ -26,11 +26,12 @@ CREATE TABLE content (
 );
 
 CREATE TABLE comments (
+    commentID int AUTO_INCREMENT,
     contentID int,
     ownerID int,
     text MEDIUMTEXT,
-    boolean liked,
-    PRIMARY KEY(contentID),
+    liked boolean,
+    PRIMARY KEY(commentID),
     FOREIGN KEY(ownerID) REFERENCES users(userID),
     FOREIGN KEY(contentID) REFERENCES content(contentID)
 )
