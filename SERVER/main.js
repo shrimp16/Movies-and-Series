@@ -32,6 +32,11 @@ app.post('/add-comment', jsonParser, (req, res) => {
     res.send("Sucess");
 })
 
+app.delete('/remove-comment/:id', (req, res) => {
+    dbManager.removeComment(req.params.id);
+    res.send("Sucess");
+})
+
 app.use(pageRouter);
 app.use(usersRouter);
 app.use(uploadRouter);

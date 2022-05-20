@@ -65,8 +65,10 @@ module.exports = {
             if(err) throw err;
         })
     },
-    removeComment: () => {
-
+    removeComment: (commentID) => {
+        db.query(`DELETE FROM comments WHERE commentID=${commentID}`, (err, result) => {
+            if(err) throw err;
+        })
     },
     likeComment: () => {
 
