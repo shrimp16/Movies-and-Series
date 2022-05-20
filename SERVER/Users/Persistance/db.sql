@@ -24,3 +24,13 @@ CREATE TABLE content (
     PRIMARY KEY(contentID),
     FOREIGN KEY(ownerID) REFERENCES users(userID)
 );
+
+CREATE TABLE comments (
+    contentID int,
+    ownerID int,
+    text MEDIUMTEXT,
+    boolean liked,
+    PRIMARY KEY(contentID),
+    FOREIGN KEY(ownerID) REFERENCES users(userID),
+    FOREIGN KEY(contentID), REFERENCES content(contentID)
+)
