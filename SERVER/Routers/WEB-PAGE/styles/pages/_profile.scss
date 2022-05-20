@@ -115,36 +115,36 @@
     .background {
         img {
             aspect-ratio: 16/9;
-            width: 20rem;
-            height: 7.5rem;
+            width: 30rem;
+            height: 10rem;
             border-radius: 30px;
         }
     }
     
     .profile-picture {
         position: absolute;
-        margin-top: 5rem;
+        margin-top: 7rem;
     
         img {
             aspect-ratio: 1/1;
-            width: 3.75rem;
-            height: 3.75rem;
+            width: 5rem;
+            height: 5rem;
             border: 2px whitesmoke solid;
             border-radius: 50px;
         }
     }
     
     .user-info {
-        margin-top: 1.25rem;
+        margin-top: 2rem;
         text-align: center;
     
         h1 {
-            font-size: 1.25rem;
+            font-size: 1.625rem;
         }
     
         h2 {
-            width: 15rem;
-            font-size: 1rem;
+            width: 20rem;
+            font-size: 1.1rem;
         }
     }
 }
