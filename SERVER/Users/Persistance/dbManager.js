@@ -59,5 +59,17 @@ module.exports = {
     },
     getContent: (id) => {
         return syncSql.mysql(config, `SELECT * FROM content WHERE contentID=${id}`).data.rows;
+    },
+    addComment: () => {
+
+    },
+    removeComment: () => {
+
+    },
+    likeComment: () => {
+
+    },
+    removeLike: () => {
+        
     }
 }
