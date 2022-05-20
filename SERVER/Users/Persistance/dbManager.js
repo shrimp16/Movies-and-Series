@@ -60,8 +60,10 @@ module.exports = {
     getContent: (id) => {
         return syncSql.mysql(config, `SELECT * FROM content WHERE contentID=${id}`).data.rows;
     },
-    addComment: () => {
-
+    addComment: (comment) => {
+        db.query('INSERT INTO comments SET ?', comment, (err, result) => {
+            if(err) throw err;
+        })
     },
     removeComment: () => {
 
@@ -70,6 +72,6 @@ module.exports = {
 
     },
     removeLike: () => {
-        
+
     }
 }
