@@ -32,5 +32,5 @@ CREATE TABLE comments (
     boolean liked,
     PRIMARY KEY(contentID),
     FOREIGN KEY(ownerID) REFERENCES users(userID),
-    FOREIGN KEY(contentID), REFERENCES content(contentID)
+    FOREIGN KEY(contentID) REFERENCES content(contentID)
 )
