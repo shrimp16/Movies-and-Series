@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jsonParser = require('body-parser').json();
-const dbManager = require('../Users/Persistance/dbManager');
+const dbManager = require('../Persistance/dbManager');
 
 router.post('/add-comment', jsonParser, (req, res) => {
 

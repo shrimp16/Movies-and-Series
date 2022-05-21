@@ -1,4 +1,4 @@
-const dbManager = require('../Users/Persistance/dbManager');
+const dbManager = require('../Persistance/dbManager');
 
 const defaultProfile = {
     picture: 'Default',

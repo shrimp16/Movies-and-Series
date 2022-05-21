@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const upload = require('../Users/Persistance/uploadManager');
+const upload = require('../Persistance/uploadManager');
 
-const dbManager = require('../Users/Persistance/dbManager');
+const dbManager = require('../Persistance/dbManager');
 
 router.post('/add-content', upload.single('image'), (req, res) => {
 

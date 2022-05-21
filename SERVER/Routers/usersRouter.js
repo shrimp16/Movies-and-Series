@@ -3,8 +3,8 @@ const router = express.Router();
 const jsonParser = require('body-parser').json();
 
 const authManager = require('../Users/auth');
-const dbManager = require('../Users/Persistance/dbManager');
-const upload = require('../Users/Persistance/uploadManager');
+const dbManager = require('../Persistance/dbManager');
+const upload = require('../Persistance/uploadManager');
 
 router.post('/register', jsonParser, (req, res) => {
     res.send(authManager.register(req.body.username, req.body.password, req.body.email));
