@@ -1,9 +1,9 @@
 export default class ProfileEditor {
     constructor() {
-        this.setupListeners();
+        this.setupElements();
     }
 
-    setupListeners(){
+    setupElements() {
         document.getElementById('profile-pic-btn').addEventListener('click', () => {
             document.getElementById('profile-pic-input').click();
         })
