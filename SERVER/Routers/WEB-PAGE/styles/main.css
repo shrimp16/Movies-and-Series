@@ -407,7 +407,7 @@ input[type=file] {
   background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
 }
 .profile-editor-body * {
-  margin: 2.5px;
+  margin: 3px;
 }
 .profile-editor-body h1 {
   font-size: 2rem;
@@ -418,8 +418,20 @@ input[type=file] {
   text-align: center;
 }
 
-.profile-picture-edit {
-  width: 5rem;
+.banner-edit {
+  width: 15rem;
   height: 5rem;
   border: 1px black solid;
+  border-radius: 15px;
+  aspect-ratio: 16/9;
+  margin: auto;
+}
+
+.profile-picture-edit {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px black solid;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  margin: auto;
 }/*# sourceMappingURL=main.css.map */

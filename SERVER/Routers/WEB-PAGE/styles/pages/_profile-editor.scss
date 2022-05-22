@@ -13,7 +13,7 @@ input[type="file"]{
     @include border();
 
     *{
-        margin: 2.5px;
+        margin: 3px;
     }
 
     h1 {
@@ -27,8 +27,20 @@ input[type="file"]{
     }
 }
 
-.profile-picture-edit {
-    width: 5rem;
+.banner-edit {
+    width: 15rem;
     height: 5rem;
     border: 1px black solid;
+    border-radius: 15px;
+    aspect-ratio: 16/9;
+    margin: auto;
+}
+
+.profile-picture-edit {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px black solid;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    margin: auto;
 }
