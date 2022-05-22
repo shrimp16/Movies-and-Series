@@ -2,6 +2,7 @@ import Login from './controllers/login.js';
 import Register from './controllers/register.js';
 import NotFound from './controllers/404.js';
 import Profile from './controllers/profiles.js';
+import ProfileEditor from './controllers/profile-editor.js';
 
 export default class Router {
 
@@ -45,6 +46,7 @@ export default class Router {
                 break;
             case 'profile-editor':
                 await this.loadPage('profile-editor');
+                new ProfileEditor();
                 break;
             default:
                 await this.loadPage('404');
