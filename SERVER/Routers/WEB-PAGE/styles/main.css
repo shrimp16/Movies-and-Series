@@ -377,4 +377,49 @@ body {
     width: 20rem;
     font-size: 1.1rem;
   }
+}
+input[type=file] {
+  display: none;
+}
+
+.profile-editor-body {
+  width: 15rem;
+  margin: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 0.8rem;
+}
+.profile-editor-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
+}
+.profile-editor-body * {
+  margin: 2.5px;
+}
+.profile-editor-body h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.profile-editor-body p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.profile-picture-edit {
+  width: 5rem;
+  height: 5rem;
+  border: 1px black solid;
 }/*# sourceMappingURL=main.css.map */

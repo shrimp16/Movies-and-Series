@@ -1,3 +1,34 @@
+@use '../utils/' as *;
+
 input[type="file"]{
     display: none;
+}
+
+.profile-editor-body {
+    width: 15rem;
+    margin: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    @include border();
+
+    *{
+        margin: 2.5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+}
+
+.profile-picture-edit {
+    width: 5rem;
+    height: 5rem;
+    border: 1px black solid;
 }
