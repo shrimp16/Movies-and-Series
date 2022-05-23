@@ -1,4 +1,3 @@
-import Login from './controllers/login.js';
 import Register from './controllers/register.js';
 import NotFound from './controllers/404.js';
 import Profile from './controllers/profiles.js';
@@ -28,7 +27,10 @@ export default class Router {
                 break;
             case 'login':
                 await this.loadPage('login');
-                new Login();
+                import('./controllers/login.js')
+                .then((loader) => {
+                    new loader.default();
+                })
                 break;
             case 'register':
                 await this.loadPage('register');
