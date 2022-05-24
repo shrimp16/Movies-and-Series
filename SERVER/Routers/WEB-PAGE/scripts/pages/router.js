@@ -1,7 +1,11 @@
-import Register from './controllers/register.js';
-import NotFound from './controllers/404.js';
-import Profile from './controllers/profiles.js';
-import ProfileEditor from './controllers/profile-editor.js';
+const pages = [
+    'login',
+    'register',
+    'recovery',
+    'profile',
+    'profile-editor',
+    'show-creator'
+]
 
 export default class Router {
 
@@ -14,17 +18,26 @@ export default class Router {
     }
 
     async routeChangeHandler() {
-        const hash = window.location.hash.substring(1);
-        const hashArr = Array.from(hash.split('/'));
-
-        console.log(hashArr);
+        let hash = window.location.hash.substring(1);
 
         this.body.innerHTML = '';
 
-        await this.loadPage(hash);
+        const exists = pages.find(e => {
+            if(e === hash){
+                return true;
+            }
+        })
+
+        if(!exists){
+            hash = '404';
+        }
 
         const loader = await import(`./controllers/${hash}.js`);
+
+        await this.loadPage(hash);
+
         new loader.default();
+
     }
 
     async loadPage(page) {
