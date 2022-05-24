@@ -1,18 +1,20 @@
 export default class Profile {
-    constructor(id){
+    constructor(){
         this.body = document.querySelector('#profile-body')
-        this.verifyProfile(id);
+        this.hash = window.location.hash;
+        this.id = Array.from(this.hash.split('/'))[1];
+        this.verifyProfile();
     }
 
-    verifyProfile(id) {
-        if(id === localStorage.getItem('userID') || id === sessionStorage.getItem('userID')){
+    verifyProfile() {
+        if(this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')){
             this.loadOwnProfile();
         }
-        this.loadProfile(id);
+        this.loadProfile();
     }
 
     async loadProfile(id) {
-        await fetch(`http://192.168.1.103:50000/user-content/list/${id}`)
+        await fetch(`http://192.168.1.103:50000/user-content/list/${this.id}`)
         .then(response => response.json()
         .then(async (response) => {
             console.log(response);

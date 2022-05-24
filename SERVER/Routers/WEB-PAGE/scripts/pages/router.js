@@ -19,6 +19,7 @@ export default class Router {
 
     async routeChangeHandler() {
         let hash = window.location.hash.substring(1);
+        hash = Array.from(hash.split('/'))[0];
 
         this.body.innerHTML = '';
 
