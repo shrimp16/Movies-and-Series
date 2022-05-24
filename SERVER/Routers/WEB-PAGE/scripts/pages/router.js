@@ -27,10 +27,12 @@ export default class Router {
                 break;
             case 'login':
                 await this.loadPage('login');
-                import('./controllers/login.js')
+                const loader = await import('./controllers/login.js');
+                new loader.default();
+                /*import('./controllers/login.js')
                 .then((loader) => {
                     new loader.default();
-                })
+                })*/
                 break;
             case 'register':
                 await this.loadPage('register');
