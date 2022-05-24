@@ -1,5 +1,6 @@
 export default class Login {
     constructor() {
+        document.title = 'My Shows List | Login'
         this.setupElements();
     }
 

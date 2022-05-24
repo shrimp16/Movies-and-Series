@@ -1,6 +1,7 @@
 export default class Register{
     constructor(){
         this.setupElements();
+        document.title = 'My Shows List | Register';
     }
 
     setupElements() {

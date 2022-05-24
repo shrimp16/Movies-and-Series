@@ -4,6 +4,7 @@ export default class Profile {
         this.hash = window.location.hash;
         this.id = Array.from(this.hash.split('/'))[1];
         this.verifyProfile();
+        document.title = 'My Shows List | Profile '; // Need to add username here
     }
 
     verifyProfile() {

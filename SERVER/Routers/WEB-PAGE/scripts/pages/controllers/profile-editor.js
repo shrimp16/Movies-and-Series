@@ -3,6 +3,7 @@ export default class ProfileEditor {
         this.bannerInput = document.getElementById('banner-input');
         this.profilePicInput = document.getElementById('profile-pic-input');
         this.setupElements();
+        document.title = 'My Shows List | Profile Editor';
     }
 
     setupElements() {
