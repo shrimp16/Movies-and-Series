@@ -13,7 +13,7 @@ export default class Profile {
         this.loadProfile();
     }
 
-    async loadProfile(id) {
+    async loadProfile() {
         await fetch(`http://192.168.1.103:50000/user-content/list/${this.id}`)
         .then(response => response.json()
         .then(async (response) => {

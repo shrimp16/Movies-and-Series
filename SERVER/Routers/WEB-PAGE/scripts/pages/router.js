@@ -33,11 +33,11 @@ export default class Router {
             hash = '404';
         }
 
-        const loader = await import(`./controllers/${hash}.js`);
+        //const loader = await import(`./controllers/${hash}.js`);
 
         await this.loadPage(hash);
 
-        new loader.default();
+        //new loader.default();
 
     }
 
