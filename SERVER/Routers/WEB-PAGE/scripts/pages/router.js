@@ -21,7 +21,12 @@ export default class Router {
 
         this.body.innerHTML = '';
 
-        switch (hashArr[0]) {
+        await this.loadPage(hash);
+
+        const loader = await import(`./controllers/${hash}.js`);
+        new loader.default();
+
+        /*switch (hashArr[0]) {
             case '':
                 //home page
                 break;
@@ -32,7 +37,7 @@ export default class Router {
                 /*import('./controllers/login.js')
                 .then((loader) => {
                     new loader.default();
-                })*/
+                })
                 break;
             case 'register':
                 await this.loadPage('register');
@@ -55,7 +60,7 @@ export default class Router {
             default:
                 await this.loadPage('404');
                 new NotFound();
-        }
+        }*/
     }
 
     async loadPage(page) {
