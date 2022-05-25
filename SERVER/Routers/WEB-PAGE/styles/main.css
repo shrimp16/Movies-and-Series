@@ -522,6 +522,14 @@ input[type=file] {
   border-radius: inherit;
   background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
 }
+.show-preview img {
+  margin: auto;
+  height: 30rem;
+  width: 20rem;
+  aspect-ratio: 16/9;
+  border: 3px black solid;
+  border-radius: 0.8rem;
+}
 
 .show-creator-submit {
   display: flex;
@@ -544,6 +552,14 @@ input[type=file] {
     width: 25rem;
     height: 35rem;
     margin: auto;
+  }
+  .show-preview img {
+    margin: auto;
+    height: 25rem;
+    width: 17.5;
+    aspect-ratio: 16/9;
+    border: 3px black solid;
+    border-radius: 0.8rem;
   }
 
   .show-inputs {
