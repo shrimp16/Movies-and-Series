@@ -530,6 +530,10 @@ input[type=file] {
 }
 
 @media (max-width: 70rem) {
+  .show-creator-swap-panel {
+    display: block;
+  }
+
   .show-creater-body {
     width: 100%;
   }
@@ -546,8 +550,8 @@ input[type=file] {
     border-radius: 0.8rem;
     display: flex;
     flex-direction: column;
-    width: 30rem;
-    height: 50rem;
+    width: 25rem;
+    height: 35rem;
     margin: auto;
   }
   .show-inputs:before {
@@ -563,7 +567,7 @@ input[type=file] {
     background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
   }
   .show-inputs * {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 10px;
   }
   .show-inputs button {
@@ -571,5 +575,6 @@ input[type=file] {
     width: -moz-fit-content;
     width: fit-content;
     margin: auto;
+    margin-bottom: 5px;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -69,6 +69,10 @@
 }
 
 @media (max-width: 70rem){
+    .show-creator-swap-panel{
+        display: block;
+    }
+
     .show-creater-body {
         width: 100%;
     }
@@ -81,18 +85,19 @@
         @include border();
         display: flex;
         flex-direction: column;
-        width: 30rem;
-        height: 50rem;
+        width: 25rem;
+        height: 35rem;
         margin: auto;
         
         * {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin: 10px;
         }
 
         button {
             width: fit-content;
             margin: auto;
+            margin-bottom: 5px;
         }
     }
 }
