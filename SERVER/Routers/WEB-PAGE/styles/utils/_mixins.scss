@@ -1,7 +1,7 @@
 @use './colors' as *;
 
 @mixin border {
-    
+
     position: relative;
     background: white;
 
@@ -9,7 +9,7 @@
     border: solid 5px transparent;
     border-radius: 0.8rem;
 
-    &:before{
+    &:before {
         content: "";
         position: absolute;
         top: 0;
@@ -24,12 +24,12 @@
 }
 
 @mixin border-bottom {
-    
+
     position: relative;
     background: white;
 
     background-clip: padding-box;
     border-bottom: solid 2px transparent;
     border-image: linear-gradient(to left, $main-color, $secondary-color) 1 0;
-    
+
 }
