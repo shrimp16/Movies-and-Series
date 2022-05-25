@@ -503,6 +503,9 @@ input[type=file] {
   font-size: 1.5rem;
   margin: 10px;
 }
+.show-inputs .rate-input {
+  width: 50px;
+}
 .show-inputs button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -522,6 +525,7 @@ input[type=file] {
   border: solid 5px transparent;
   border-radius: 0.8rem;
   background-color: whitesmoke;
+  font-size: 1.5rem;
 }
 .show-preview:before {
   content: "";
@@ -535,12 +539,18 @@ input[type=file] {
   border-radius: inherit;
   background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
 }
+.show-preview .desc-preview {
+  font-size: 1.25rem;
+  width: 80%;
+  text-align: center;
+}
 .show-preview img {
   height: 30rem;
   width: 20rem;
   aspect-ratio: 16/9;
   border: 3px black solid;
   border-radius: 0.8rem;
+  margin-bottom: 10px;
 }
 
 .show-creator-submit {

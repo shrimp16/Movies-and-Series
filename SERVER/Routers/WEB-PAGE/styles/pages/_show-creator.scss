@@ -57,6 +57,10 @@
         margin: 10px;
     }
 
+    .rate-input {
+        width: 50px;
+    }
+
     button {
         width: fit-content;
         margin: auto;
@@ -74,12 +78,21 @@
     @include border();
     background-color: whitesmoke;
 
+    font-size: 1.5rem;
+
+    .desc-preview {
+        font-size: 1.25rem;
+        width: 80%;
+        text-align: center;
+    }
+
     img {
         height: 30rem;
         width: 20rem;
         aspect-ratio: 16/9;
         border: 3px black solid;
         border-radius: 0.8rem;
+        margin-bottom: 10px;
     }
 }
 
