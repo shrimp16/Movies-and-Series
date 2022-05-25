@@ -48,6 +48,20 @@
 
     @include border();
     background-color: whitesmoke;
+
+    flex-direction: column; 
+    margin: auto;
+
+    * {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+
+    button {
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 5px;
+    }
 }
 
 .show-preview {
@@ -56,12 +70,11 @@
     height: 40rem;
     display: inline-flexbox;
     text-align: center;
-    
+
     @include border();
     background-color: whitesmoke;
 
     img {
-        margin: auto;
         height: 30rem;
         width: 20rem;
         aspect-ratio: 16/9;
@@ -77,8 +90,8 @@
     font-size: 2rem;
 }
 
-@media (max-width: 70rem){
-    .show-creator-swap-panel{
+@media (max-width: 70rem) {
+    .show-creator-swap-panel {
         display: block;
     }
 
@@ -100,27 +113,6 @@
             aspect-ratio: 16/9;
             border: 3px black solid;
             border-radius: 0.8rem;
-        }
-    }
-
-    .show-inputs {
-        @include border();
-        background-color: whitesmoke;
-        display: flex;
-        flex-direction: column;
-        width: 25rem;
-        height: 35rem;
-        margin: auto;
-        
-        * {
-            font-size: 1.5rem;
-            margin: 10px;
-        }
-
-        button {
-            width: fit-content;
-            margin: auto;
-            margin-bottom: 5px;
         }
     }
 }
