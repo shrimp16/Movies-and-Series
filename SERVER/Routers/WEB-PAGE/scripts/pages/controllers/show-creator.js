@@ -59,15 +59,15 @@ export default class ShowCreator{
         this.goToEditor.addEventListener('click', () => {
             this.showPreview.style.display = 'none';
             this.showInputs.style.display = 'flex';
-            this.showInputs.classList.add('selected');
-            this.showPreview.classList.remove('selected');
+            this.goToEditor.classList.add('selected');
+            this.goToPreview.classList.remove('selected');
         })
 
         this.goToPreview.addEventListener('click', () => {
             this.showPreview.style.display = 'flex';
             this.showInputs.style.display = 'none';
-            this.showInputs.classList.remove('selected');
-            this.showPreview.classList.add('selected');
+            this.goToEditor.classList.remove('selected');
+            this.goToPreview.classList.add('selected');
         })
     }
 }

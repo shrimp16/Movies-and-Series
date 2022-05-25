@@ -104,6 +104,25 @@
 }
 
 @media (max-width: 70rem) {
+
+    .show-inputs {
+        width: 25rem;
+        height: 35rem;
+        
+        .rate-input {
+            margin: auto;
+        }
+
+        .desc-input {
+            width: 80%;
+            margin: auto;
+        }
+
+        * {
+            margin: 5px;
+        }
+    }
+
     .show-creator-swap-panel {
         display: block;
     }

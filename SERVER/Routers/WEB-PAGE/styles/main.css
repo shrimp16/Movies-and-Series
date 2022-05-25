@@ -560,6 +560,21 @@ input[type=file] {
 }
 
 @media (max-width: 70rem) {
+  .show-inputs {
+    width: 25rem;
+    height: 35rem;
+  }
+  .show-inputs .rate-input {
+    margin: auto;
+  }
+  .show-inputs .desc-input {
+    width: 80%;
+    margin: auto;
+  }
+  .show-inputs * {
+    margin: 5px;
+  }
+
   .show-creator-swap-panel {
     display: block;
   }
