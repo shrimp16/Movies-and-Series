@@ -23,16 +23,32 @@ export default class ShowCreator{
             this.upload.click();
         })
 
-        this.titleInput.addEventListener('keydown', (e) => {
-
-            if(e.key === 'Enter'){
-                console.log("xdxd");
-            }
+        this.titleInput.addEventListener('keydown', () => {
 
             setTimeout(() => {
                 this.titlePreview.innerText = this.titleInput.value;
             }, 1)
 
+        })
+
+        this.descriptionInput.addEventListener('keydown', () => {
+
+            setTimeout(() => {
+                this.descriptionPreview.innerText = this.descriptionInput.value;
+            }, 1)
+
+        })
+
+        this.rateInput.addEventListener('change', () => {
+
+            setTimeout(() => {
+                this.ratePreview.innerText = `${this.rateInput.value}/10`;
+            }, 1)
+
+        })
+
+        this.upload.addEventListener('change', () => {
+            this.imagePreview.src = URL.createObjectURL(this.upload.files[0]);
         })
     }
 }
