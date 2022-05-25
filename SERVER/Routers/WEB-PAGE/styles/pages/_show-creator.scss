@@ -1,0 +1,33 @@
+.show-creater-body {
+    display: flex;
+    flex-direction: row;
+    width: 70rem;
+    margin: auto;
+
+    * {
+        margin: auto;
+    }
+}
+
+.show-inputs {
+    width: 30rem;
+    height: 50rem;
+    display: inline-flexbox;
+    border: 3px black solid;
+    text-align: center;
+}
+
+.show-preview {
+    width: 30rem;
+    height: 50rem;
+    display: inline-flexbox;
+    text-align: center;
+    border: 3px black solid;
+}
+
+
+.show-creator-submit {
+    display: flex;
+    margin: auto;
+    font-size: 1.5rem;
+}
