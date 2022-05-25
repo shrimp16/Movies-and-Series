@@ -1,5 +1,34 @@
 @use '../utils/' as *;
 
+.show-creator-swap-panel {
+    display: none;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5rem;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 2px $secondary-color solid;
+        }
+    }
+}
+
+.go-to-preview {
+    margin-left: 10px;
+}
+
+.go-to-editor {
+    margin-right: 10px;
+}
+
+.selected {
+    border-bottom: 2px $secondary-color solid;
+}
+
 .show-creater-body {
     display: flex;
     flex-direction: row;

@@ -436,6 +436,33 @@ input[type=file] {
   margin: auto;
 }
 
+.show-creator-swap-panel {
+  display: none;
+  text-align: center;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+.show-creator-swap-panel a {
+  color: royalblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+.show-creator-swap-panel a:hover {
+  border-bottom: 2px royalblue solid;
+}
+
+.go-to-preview {
+  margin-left: 10px;
+}
+
+.go-to-editor {
+  margin-right: 10px;
+}
+
+.selected {
+  border-bottom: 2px royalblue solid;
+}
+
 .show-creater-body {
   display: flex;
   flex-direction: row;
