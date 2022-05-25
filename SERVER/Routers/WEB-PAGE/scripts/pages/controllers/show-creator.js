@@ -13,6 +13,11 @@ export default class ShowCreator{
         this.ratePreview = document.getElementById('show-creator-rate');
         this.imagePreview = document.getElementById('show-creator-image');
 
+        this.goToEditor = document.getElementById('go-to-editor');
+        this.goToPreview = document.getElementById('go-to-preview');
+        this.showInputs = document.getElementById('show-inputs');
+        this.showPreview = document.getElementById('show-preview');
+
         this.setupElements();
 
         document.title = 'My Shows List | Show Creator';
@@ -49,6 +54,20 @@ export default class ShowCreator{
 
         this.upload.addEventListener('change', () => {
             this.imagePreview.src = URL.createObjectURL(this.upload.files[0]);
+        })
+
+        this.goToEditor.addEventListener('click', () => {
+            this.showPreview.style.display = 'none';
+            this.showInputs.style.display = 'flex';
+            this.showInputs.classList.add('selected');
+            this.showPreview.classList.remove('selected');
+        })
+
+        this.goToPreview.addEventListener('click', () => {
+            this.showPreview.style.display = 'flex';
+            this.showInputs.style.display = 'none';
+            this.showInputs.classList.remove('selected');
+            this.showPreview.classList.add('selected');
         })
     }
 }

@@ -540,6 +540,10 @@ input[type=file] {
 
   .show-preview {
     display: none;
+    flex-direction: column;
+    width: 25rem;
+    height: 35rem;
+    margin: auto;
   }
 
   .show-inputs {
@@ -548,6 +552,7 @@ input[type=file] {
     background-clip: padding-box;
     border: solid 5px transparent;
     border-radius: 0.8rem;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     width: 25rem;

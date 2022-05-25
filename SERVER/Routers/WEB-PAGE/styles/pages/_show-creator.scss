@@ -79,10 +79,15 @@
 
     .show-preview {
         display: none;
+        flex-direction: column;
+        width: 25rem;
+        height: 35rem;
+        margin: auto;
     }
 
     .show-inputs {
         @include border();
+        background-color: whitesmoke;
         display: flex;
         flex-direction: column;
         width: 25rem;
