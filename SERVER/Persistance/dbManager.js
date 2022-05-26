@@ -35,5 +35,12 @@ module.exports = {
             return true;
         }
         return false;
+    },
+    exists: (userData, property) => {
+        let exists = syncSql.mysql(config, `SELECT * FROM ${property} WHERE ${property}="${userData}"`).data.rows;
+        if(exists.length > 0){
+            return true;
+        }
+        return false;
     }
 }
