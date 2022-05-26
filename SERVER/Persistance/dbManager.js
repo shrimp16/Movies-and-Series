@@ -30,5 +30,10 @@ module.exports = {
             return true;
         }
         return false;
+    },
+    addToDatabase: (table, data) => {
+        db.query(`INSERT INTO ${table} SET ${data}`, (err, result) => {
+            if(err) throw err;
+        })
     }
 }
