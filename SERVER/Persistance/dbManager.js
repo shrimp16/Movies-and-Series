@@ -35,5 +35,10 @@ module.exports = {
         db.query(`INSERT INTO ${table} SET ${data}`, (err, result) => {
             if(err) throw err;
         })
+    },
+    removeFromDatabse: (table, condition) => {
+        db.query(`DELETE FROM ${table} WHERE ${condition}`, (err, result) => {
+            if(err) throw err;
+        })
     }
 }
