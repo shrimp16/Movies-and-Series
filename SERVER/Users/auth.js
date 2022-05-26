@@ -26,9 +26,16 @@ module.exports = {
 
         setTimeout(() => {
             
-            defaultProfile.userID = dbManager.getUserByName(username).userID;
+            defaultProfile.userID = dbManager.getDataFromTableWithCondition(
+                'users',
+                'userID',
+                `username="${username}"`
+                )[0].userID;
 
-            dbManager.updateProfile(defaultProfile);
+            console.log(defaultProfile);
+            //dbManager.updateProfile(defaultProfile);
+
+            dbManager.addToDatabase('profiles', defaultProfile);
 
         }, 100);
 
