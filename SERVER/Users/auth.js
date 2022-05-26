@@ -42,7 +42,7 @@ module.exports = {
 
         let user = dbManager.getDataFromTableWithCondition('users', null, `username="${username}"`);
 
-        if(!user){
+        if(!user[0]){
             return false;
         }
 
