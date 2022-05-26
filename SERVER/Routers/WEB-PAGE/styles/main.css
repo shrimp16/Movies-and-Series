@@ -542,7 +542,11 @@ input[type=file] {
 .show-preview .desc-preview {
   font-size: 1.25rem;
   width: 80%;
+  height: 4.5rem;
   text-align: center;
+}
+.show-preview *:not(.desc-preview) {
+  margin: 5px;
 }
 .show-preview img {
   height: 30rem;

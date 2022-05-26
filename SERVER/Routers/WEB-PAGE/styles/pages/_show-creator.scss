@@ -83,7 +83,12 @@
     .desc-preview {
         font-size: 1.25rem;
         width: 80%;
+        height: 4.5rem;
         text-align: center;
+    }
+
+    *:not(.desc-preview){
+        margin: 5px;
     }
 
     img {
