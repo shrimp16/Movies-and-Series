@@ -21,5 +21,19 @@ module.exports = {
         if(!data){
             return syncSql.mysql(config, `SELECT * FROM ${table} WHERE ${condition}`);
         }
+    },
+    usernameExists: (username) => {
+        let exists = syncSql.mysql(config, `SELECT * FROM users WHERE username="${username}"`).data.rows;
+        if(exists.length > 0) {
+            return true;
+        }
+        return false;
+    },
+    emailExists: (email) => {
+        let exists = syncSql.mysql(config, `SELECT * FROM users WHERE email="${email}"`).data.rows;
+        if(exists.length > 0) {
+            return true;
+        }
+        return false;
     }
 }
