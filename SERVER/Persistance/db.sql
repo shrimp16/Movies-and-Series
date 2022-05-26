@@ -1,3 +1,8 @@
+DROP TABLE users;
+DROP TABLE profiles;
+DROP TABLE content;
+DROP TABLE comments;
+
 CREATE TABLE users (
     userID int AUTO_INCREMENT,
     username VARCHAR(255),
