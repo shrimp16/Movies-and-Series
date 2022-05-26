@@ -8,11 +8,11 @@ const defaultProfile = {
 module.exports = {
     register: (username, password, email) => {
 
-        if (dbManager.usernameExists(username)) {
+        if (dbManager.exists('users', username, 'username')) {
             return "Username already exists!";
         }
 
-        if(dbManager.emailExists(email)) {
+        if(dbManager.exists('users', email, 'email')) {
             return "Email already exists!";
         }
 
@@ -22,7 +22,7 @@ module.exports = {
             password: password
         }
 
-        dbManager.addUser(newUser);
+        dbManager.addToDatabase('users', newUser);
 
         setTimeout(() => {
             
@@ -39,7 +39,7 @@ module.exports = {
         console.log(username);
         console.log(password);
 
-        let user = dbManager.getUserByName(username);
+        let user = dbManager.getDataFromTableWithCondition('users', null, `username="${username}"`);
 
         console.log(user);
 
@@ -47,8 +47,8 @@ module.exports = {
             return false;
         }
 
-        if (user.password === password) {
-            return user.userID;
+        if (user[0].password === password) {
+            return user[0].userID;
         }
 
         return false;
