@@ -17,10 +17,12 @@ module.exports = {
     getDataFromTable: (table, data) => {
         return syncSql.mysql(config, `SELECT ${data} FROM ${table}`);
     },
-    getDateFromTableWithCondition: (table, data, condition) => {
+    getDataFromTableWithCondition: (table, data, condition) => {
         if(!data){
             return syncSql.mysql(config, `SELECT * FROM ${table} WHERE ${condition}`);
         }
+
+        return syncSql.mysql(config, `SELECT ${data} FROM ${table} WHERE ${condition}`);
     },
     usernameExists: (username) => {
         let exists = syncSql.mysql(config, `SELECT * FROM users WHERE username="${username}"`).data.rows;
