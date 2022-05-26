@@ -32,9 +32,6 @@ module.exports = {
                 `username="${username}"`
                 )[0].userID;
 
-            console.log(defaultProfile);
-            //dbManager.updateProfile(defaultProfile);
-
             dbManager.addToDatabase('profiles', defaultProfile);
 
         }, 100);
@@ -43,12 +40,7 @@ module.exports = {
     },
     login: (username, password) => {
 
-        console.log(username);
-        console.log(password);
-
         let user = dbManager.getDataFromTableWithCondition('users', null, `username="${username}"`);
-
-        console.log(user);
 
         if(!user){
             return false;
