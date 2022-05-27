@@ -1,0 +1,150 @@
+@use '../utils/' as *;
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    img {
+        aspect-ratio: 16/9;
+        width: 40rem;
+        height: 15rem;
+        border-radius: 15px;
+    }
+}
+
+.profile-picture {
+    position: absolute;
+    margin-top: 10rem;
+
+    img {
+        aspect-ratio: 1/1;
+        width: 7.5rem;
+        height: 7.5rem;
+        border: 4px whitesmoke solid;
+        border-radius: 50%;
+    }
+}
+
+.user-info {
+    margin-top: 2.5rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        width: 30rem;
+        font-size: 1.25rem;
+    }
+}
+
+.profile-body {
+
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin: auto;
+    margin-bottom: 1rem;
+
+    .card {
+        margin: auto;
+        margin-top: 1rem;
+        height: 25rem;
+        width: 15rem;
+        @include border();
+        cursor: pointer;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 0.5rem;
+            transition: 0.3s;
+        }
+
+        .card-title {
+            position: absolute;
+            inset: 0;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        &:hover {
+
+            img {
+                filter: blur(5px);
+            }
+
+            .card-title {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.user-profile-panel {
+    margin-top: 1rem;
+
+    * {
+        margin-left: 15px;
+    }
+
+    button {
+        width: 7.5rem;
+    }
+}
+
+@media (max-width: 50rem){
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .background {
+        img {
+            aspect-ratio: 16/9;
+            width: 30rem;
+            height: 10rem;
+            border-radius: 30px;
+        }
+    }
+    
+    .profile-picture {
+        position: absolute;
+        margin-top: 7rem;
+    
+        img {
+            aspect-ratio: 1/1;
+            width: 5rem;
+            height: 5rem;
+            border: 2px whitesmoke solid;
+            border-radius: 50px;
+        }
+    }
+    
+    .user-info {
+        margin-top: 2rem;
+        text-align: center;
+    
+        h1 {
+            font-size: 1.625rem;
+        }
+    
+        h2 {
+            width: 20rem;
+            font-size: 1.1rem;
+        }
+    }
+}

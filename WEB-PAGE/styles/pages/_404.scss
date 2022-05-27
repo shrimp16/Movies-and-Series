@@ -1,0 +1,21 @@
+.not-found {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+
+    * {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+}

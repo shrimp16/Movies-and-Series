@@ -1,0 +1,46 @@
+@use '../utils/' as *;
+
+input[type="file"]{
+    display: none;
+}
+
+.profile-editor-body {
+    width: 15rem;
+    margin: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    @include border();
+
+    *{
+        margin: 3px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+}
+
+.banner-edit {
+    width: 15rem;
+    height: 5rem;
+    border: 1px black solid;
+    border-radius: 15px;
+    aspect-ratio: 16/9;
+    margin: auto;
+}
+
+.profile-picture-edit {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px black solid;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    margin: auto;
+}
