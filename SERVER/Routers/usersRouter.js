@@ -24,7 +24,7 @@ router.post('/login', jsonParser, (req, res) => {
 
 router.get('/user-content/:id', (req, res) => {
     
-    res.send(dbManager.getContent(req.params.id));
+    res.send(dbManager.getDataFromTableWithCondition('content', null, `ownerID=${req.params.id}`));
 
 })
 
