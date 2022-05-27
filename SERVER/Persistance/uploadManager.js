@@ -1,5 +1,14 @@
 const multer = require('multer');
 
-const upload = multer({storage:multer.memoryStorage()});
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './Persistance/Images');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+})
+
+const upload = multer({storage: fileStorageEngine});
 
 module.exports = upload;
