@@ -30,8 +30,8 @@ router.get('/user-content/:id', (req, res) => {
 
 router.delete('/remove-content/:id', (req, res) => {
 
-    dbManager.removeContent(req.params.id);
-
+    dbManager.removeFromDatabse('content', `contentID=${req.params.id}`);
+    
     res.send("Content deleted!");
 
 })
