@@ -1,7 +1,7 @@
-DROP TABLE users;
-DROP TABLE profiles;
-DROP TABLE content;
 DROP TABLE comments;
+DROP TABLE content;
+DROP TABLE profiles;
+DROP TABLE users;
 
 CREATE TABLE users (
     userID int AUTO_INCREMENT,
@@ -25,7 +25,7 @@ CREATE TABLE content (
     title VARCHAR(255),
     text MEDIUMTEXT,
     rate int,
-    image LONGTEXT,
+    image MEDIUMTEXT,
     PRIMARY KEY(contentID),
     FOREIGN KEY(ownerID) REFERENCES users(userID)
 );
