@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const jsonParser = require('body-parser').json();
+const path = require('path');
 
 const authManager = require('../Users/auth');
 const dbManager = require('../Persistance/dbManager');
 const upload = require('../Persistance/uploadManager');
+
 
 router.post('/register', jsonParser, (req, res) => {
     res.send(authManager.register(req.body.username, req.body.password, req.body.email));
@@ -28,10 +30,16 @@ router.get('/user-content/:id', (req, res) => {
 
 })
 
+router.get('/image/:image', (req, res) => {
+
+    res.sendFile(path.join(__dirname, `../Persistance/Images/${req.params.image}`));
+
+})
+
 router.delete('/remove-content/:id', (req, res) => {
 
     dbManager.removeFromDatabse('content', `contentID=${req.params.id}`);
-    
+
     res.send("Content deleted!");
 
 })
