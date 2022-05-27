@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const upload = require('../Persistance/uploadManager');
+const path = require('path');
 
 const dbManager = require('../Persistance/dbManager');
 
@@ -18,6 +19,10 @@ router.post('/add-content', upload.single('image'), (req, res) => {
 
     res.send("Added content!");
 
+})
+
+router.get('/test-file', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Persistance/Images/bro.png'));
 })
 
 module.exports = router;
