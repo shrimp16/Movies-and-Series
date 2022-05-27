@@ -28,12 +28,6 @@ router.get('/user-content/:id', (req, res) => {
 
 })
 
-router.get('/user-content/list/:id', (req, res) => {
-
-    res.send(dbManager.getUserContent(req.params.id))
-
-})
-
 router.delete('/remove-content/:id', (req, res) => {
 
     dbManager.removeContent(req.params.id);
