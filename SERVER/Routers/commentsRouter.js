@@ -12,12 +12,12 @@ router.post('/add-comment', jsonParser, (req, res) => {
         liked: 0
     }
 
-    dbManager.addComment(comment);
+    dbManager.addToDatabase('comments', comment);
     res.send("Sucess");
 
 })
 
 router.delete('/remove-comment/:id', (req, res) => {
-    dbManager.removeComment(req.params.id);
+    dbManager.removeFromDatabse('comments', `commentID=${req.params.id}`);
     res.send("Sucess");
 })
