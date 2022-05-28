@@ -1,4 +1,5 @@
 const pages = [
+    'home',
     'login',
     'register',
     'recovery',
