@@ -2,7 +2,16 @@ export default class Profile {
     constructor(){
         this.body = document.querySelector('#profile-body')
         this.hash = window.location.hash;
-        this.id = Array.from(this.hash.split('/'))[1];
+        
+        this.url = window.location.href;
+        
+        const [hash, query] = this.url.split('#')[1].split('?');
+        this.params = Object.fromEntries(new URLSearchParams(query));
+        
+        console.log(this.params);
+        
+        this.id = this.params.id;
+
         this.verifyProfile();
         document.title = 'My Shows List | Profile '; // Need to add username here
     }
