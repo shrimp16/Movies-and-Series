@@ -22,6 +22,10 @@ export default class Router {
         let hash = window.location.hash.substring(1);
         hash = Array.from(hash.split('/'))[0];
 
+        if(hash === ''){
+            hash = 'home';
+        }
+
         this.body.innerHTML = '';
 
         const exists = pages.find(e => {
