@@ -41,6 +41,15 @@ export default class Profile {
             .then(response => response.json()
                 .then(async (response) => {
                     console.log(response);
+                    for(let i = 0; i < response.length; i++){
+                        await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
+                            .then(image => image.blob()
+                                .then((image) => {
+                                    console.log(image);
+                                    console.log(response[i].title);
+                                    this.createCard(image, response[i].title);
+                                }))
+                    }
                 }))
     }
 
@@ -72,8 +81,10 @@ export default class Profile {
         let newCard = document.createElement('div');
         newCard.classList.add('card');
 
+        console.log(imageSrc);
+
         let img = new Image();
-        img.src = `data:image/png;base64,${imageSrc}`;
+        img.src = URL.createObjectURL(imageSrc);
 
         let cardText = document.createElement('div');
         cardText.classList.add('card-title');
