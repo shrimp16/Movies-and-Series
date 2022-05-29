@@ -1,15 +1,15 @@
 export default class Profile {
-    constructor(){
+    constructor() {
         this.body = document.querySelector('#profile-body')
         this.hash = window.location.hash;
-        
+
         this.url = window.location.href;
-        
+
         const [hash, query] = this.url.split('#')[1].split('?');
         this.params = Object.fromEntries(new URLSearchParams(query));
-        
+
         console.log(this.params);
-        
+
         this.id = this.params.id;
 
         this.verifyProfile();
@@ -17,14 +17,14 @@ export default class Profile {
     }
 
     verifyProfile() {
-        if(this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')){
+        if (this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')) {
             this.loadOwnProfile();
         }
         this.loadProfile();
     }
 
     async loadProfile() {
-        await fetch(`http://192.168.1.103:50000/user-content/list/${this.id}`)
+        /*await fetch(`http://192.168.1.103:50000/user-content/list/${this.id}`)
         .then(response => response.json()
         .then(async (response) => {
             console.log(response);
@@ -36,7 +36,12 @@ export default class Profile {
                     this.createCard(response[0].image, response[0].title);
                 }))
             }
-        }))
+        }))*/
+        await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
+            .then(response => response.json()
+                .then(async (response) => {
+                    console.log(response);
+                }))
     }
 
     loadOwnProfile() {
@@ -49,7 +54,7 @@ export default class Profile {
 
         document.getElementById('new-show').addEventListener('click', () => {
             window.location.href = '/#show-creator';
-        }) 
+        })
 
         document.getElementById('edit-profile').addEventListener('click', () => {
             window.location.href = '/#profile-editor';
@@ -63,7 +68,7 @@ export default class Profile {
         })
     }
 
-    createCard(imageSrc, title){
+    createCard(imageSrc, title) {
         let newCard = document.createElement('div');
         newCard.classList.add('card');
 
