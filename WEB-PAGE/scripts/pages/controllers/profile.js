@@ -24,29 +24,13 @@ export default class Profile {
     }
 
     async loadProfile() {
-        /*await fetch(`http://192.168.1.103:50000/user-content/list/${this.id}`)
-        .then(response => response.json()
-        .then(async (response) => {
-            console.log(response);
-            for(let i = 0; i < response.length; i++){
-                await fetch(`http://192.168.1.103:50000/user-content/${response[i].contentID}`)
-                .then(response => response.json()
-                .then((response) => {
-                    console.log(response);
-                    this.createCard(response[0].image, response[0].title);
-                }))
-            }
-        }))*/
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
-                    console.log(response);
                     for(let i = 0; i < response.length; i++){
                         await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
                             .then(image => image.blob()
                                 .then((image) => {
-                                    console.log(image);
-                                    console.log(response[i].title);
                                     this.createCard(image, response[i].title);
                                 }))
                     }
@@ -80,8 +64,6 @@ export default class Profile {
     createCard(imageSrc, title) {
         let newCard = document.createElement('div');
         newCard.classList.add('card');
-
-        console.log(imageSrc);
 
         let img = new Image();
         img.src = URL.createObjectURL(imageSrc);
