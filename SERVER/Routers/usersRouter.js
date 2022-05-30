@@ -36,6 +36,19 @@ router.get('/image/:image', (req, res) => {
 
 })
 
+router.get('/user-profile/:id', (req, res) => {
+
+    let userProfile = {
+        username: dbManager.getDataFromTableWithCondition('users', 'username', `userID=${req.params.id}`)[0].username,
+        picture: dbManager.getDataFromTableWithCondition('profiles', 'picture', `userID=${req.params.id}`)[0].picture,
+        banner: dbManager.getDataFromTableWithCondition('profiles', 'banner', `userID=${req.params.id}`)[0].banner
+    }
+
+    console.log(userProfile);
+
+    res.send(userProfile);
+})
+
 router.delete('/remove-content/:id', (req, res) => {
 
     dbManager.removeFromDatabse('content', `contentID=${req.params.id}`);

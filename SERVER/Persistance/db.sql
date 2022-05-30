@@ -13,7 +13,8 @@ CREATE TABLE users (
 
 CREATE TABLE profiles (
     userID int UNIQUE,
-    picture LONGTEXT,
+    picture MEDIUMTEXT,
+    banner MEDIUMTEXT,
     description MEDIUMTEXT,
     PRIMARY KEY(userID),
     FOREIGN KEY(userID) REFERENCES users(userID)
