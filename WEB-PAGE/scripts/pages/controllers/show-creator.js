@@ -74,9 +74,6 @@ export default class ShowCreator {
 
         this.submit.addEventListener('click', () => {
 
-            let xd = localStorage.userID || sessionStorage.userID;
-            console.log(xd);
-
             let formData = new FormData();
 
             formData.append('image', this.upload.files[0]);
@@ -94,32 +91,5 @@ export default class ShowCreator {
                     console.log(response);
                 }))
         })
-    }
-
-    upload() {
-        let show = {
-            image: this.upload.files[0],
-            ownerID: localStorage.getItem('userID') || sessionStorage.getItem('userID'),
-            title: this.titleInput.value,
-            text: this.descriptionInput.value,
-            rate: this.rateInput.value
-        }
-
-        fetch('http://192.168.1.103:50000/add-content', {
-            method: 'POST',
-            body: JSON.stringify({
-                'image': this.upload.files[0],
-                'ownerID': localStorage.getItem('userID') || sessionStorage.getItem('userID'),
-                'title': this.titleInput.value,
-                'text': this.descriptionInput.value,
-                'rate': this.rateInput.value
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        }).then(response => response.text()
-            .then((response) => {
-                console.log(response);
-            }))
     }
 }
