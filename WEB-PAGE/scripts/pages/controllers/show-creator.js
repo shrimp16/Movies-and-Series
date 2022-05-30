@@ -18,6 +18,8 @@ export default class ShowCreator {
         this.showInputs = document.getElementById('show-inputs');
         this.showPreview = document.getElementById('show-preview');
 
+        this.submit = document.getElementById('create-show');
+
         this.setupElements();
 
         document.title = 'My Shows List | Show Creator';
@@ -71,7 +73,26 @@ export default class ShowCreator {
         })
 
         this.submit.addEventListener('click', () => {
-            this.upload();
+
+            let xd = localStorage.userID || sessionStorage.userID;
+            console.log(xd);
+
+            let formData = new FormData();
+
+            formData.append('image', this.upload.files[0]);
+            formData.append('ownerID', localStorage.userID || sessionStorage.userID);
+            formData.append('title', this.titleInput.value);
+            formData.append('text', this.descriptionInput.value);
+            formData.append('rate', this.rateInput.value);
+
+
+            fetch('http://192.168.1.103:50000/add-content', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text()
+                .then((response) => {
+                    console.log(response);
+                }))
         })
     }
 
