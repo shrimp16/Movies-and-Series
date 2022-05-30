@@ -1,6 +1,6 @@
-export default class ShowCreator{
+export default class ShowCreator {
 
-    constructor(){
+    constructor() {
 
         this.titleInput = document.getElementById('show-creator-title-input');
         this.descriptionInput = document.getElementById('show-creator-description-input');
@@ -23,7 +23,7 @@ export default class ShowCreator{
         document.title = 'My Shows List | Show Creator';
     }
 
-    setupElements(){
+    setupElements() {
         this.uploadInputBtn.addEventListener('click', () => {
             this.upload.click();
         })
@@ -69,5 +69,36 @@ export default class ShowCreator{
             this.goToEditor.classList.remove('selected');
             this.goToPreview.classList.add('selected');
         })
+
+        this.submit.addEventListener('click', () => {
+            this.upload();
+        })
+    }
+
+    upload() {
+        let show = {
+            image: this.upload.files[0],
+            ownerID: localStorage.getItem('userID') || sessionStorage.getItem('userID'),
+            title: this.titleInput.value,
+            text: this.descriptionInput.value,
+            rate: this.rateInput.value
+        }
+
+        fetch('http://192.168.1.103:50000/add-content', {
+            method: 'POST',
+            body: JSON.stringify({
+                'image': this.upload.files[0],
+                'ownerID': localStorage.getItem('userID') || sessionStorage.getItem('userID'),
+                'title': this.titleInput.value,
+                'text': this.descriptionInput.value,
+                'rate': this.rateInput.value
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then(response => response.text()
+            .then((response) => {
+                console.log(response);
+            }))
     }
 }
