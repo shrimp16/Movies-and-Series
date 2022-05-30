@@ -20,14 +20,33 @@ export default class Profile {
         if (this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')) {
             this.loadOwnProfile();
         }
-        this.loadProfile();
+        this.loadProfileHeader();
+        this.loadProfileBody();
     }
 
-    async loadProfile() {
+    async loadProfileHeader() {
+        await fetch(`http://192.168.1.103:50000/user-profile/${this.id}`)
+            .then(response => response.json()
+                .then(async (response) => {
+                    document.getElementById('username').innerText = response.username;
+                    await fetch(`http://192.168.1.103:50000/image/${response.picture}`)
+                        .then(image => image.blob()
+                            .then((image) => {
+                                document.getElementById('profile-picture').src = URL.createObjectURL(image);
+                            }))
+                    await fetch(`http://192.168.1.103:50000/image/${response.banner}`)
+                        .then(image => image.blob()
+                            .then((image) => {
+                                document.getElementById('profile-banner').src = URL.createObjectURL(image);
+                            }))
+                }))
+    }
+
+    async loadProfileBody() {
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
-                    for(let i = 0; i < response.length; i++){
+                    for (let i = 0; i < response.length; i++) {
                         await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
                             .then(image => image.blob()
                                 .then((image) => {
