@@ -40,6 +40,7 @@ router.get('/user-profile/:id', (req, res) => {
 
     let userProfile = {
         username: dbManager.getDataFromTableWithCondition('users', 'username', `userID=${req.params.id}`)[0].username,
+        description: dbManager.getDataFromTableWithConditrion('profiles', 'description', `userID=${req.params.id}`)[0].description,
         picture: dbManager.getDataFromTableWithCondition('profiles', 'picture', `userID=${req.params.id}`)[0].picture,
         banner: dbManager.getDataFromTableWithCondition('profiles', 'banner', `userID=${req.params.id}`)[0].banner
     }

@@ -1,8 +1,8 @@
 const dbManager = require('../Persistance/dbManager');
 
 const defaultProfile = {
-    picture: 'Default',
-    banner: 'Default',
+    picture: 'default-user-image-png',
+    banner: 'default-banner.png',
     description: 'This is where your description will look like'
 }
 
