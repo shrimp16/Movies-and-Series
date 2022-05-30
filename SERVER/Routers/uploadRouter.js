@@ -1,13 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const upload = require('../Persistance/uploadManager');
-const jsonParser = require('body-parser').json();
 
 const dbManager = require('../Persistance/dbManager');
 
-router.post('/add-content', jsonParser, upload.single('image'), (req, res) => {
-
-    console.log(req.body);
+router.post('/add-content', upload.single('image'), (req, res) => {
 
     let newContent = {
         ownerID: req.body.ownerID,
