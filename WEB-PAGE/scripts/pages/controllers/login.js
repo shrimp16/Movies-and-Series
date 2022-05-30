@@ -67,7 +67,7 @@ export default class Login {
             sessionStorage.setItem('username', username);
             sessionStorage.setItem('userID', id);
         }
-        window.location.href = '/#';
+        window.location.hash = `profile?id=${localStorage.userID || sessionStorage.userID}`;
         window.location.reload();
     }
 }

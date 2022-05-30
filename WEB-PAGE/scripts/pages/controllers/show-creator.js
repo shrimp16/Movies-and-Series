@@ -82,13 +82,12 @@ export default class ShowCreator {
             formData.append('text', this.descriptionInput.value);
             formData.append('rate', this.rateInput.value);
 
-
             fetch('http://192.168.1.103:50000/add-content', {
                 method: 'POST',
                 body: formData
             }).then(response => response.text()
                 .then((response) => {
-                    console.log(response);
+                    window.location.hash = `profile?id=${localStorage.userID || sessionStorage.userID}`;
                 }))
         })
     }
