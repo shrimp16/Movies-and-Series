@@ -42,5 +42,8 @@ module.exports = {
         db.query(`DELETE FROM ${table} WHERE ${condition}`, (err, result) => {
             if(err) throw err;
         })
+    },
+    editDataFromDatabase: (table, data, condition) => {
+        db.query(`UPDATE ${table} SET ${data} WHERE ${condition}`)
     }
 }
