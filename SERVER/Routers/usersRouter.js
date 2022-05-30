@@ -45,8 +45,6 @@ router.get('/user-profile/:id', (req, res) => {
         banner: dbManager.getDataFromTableWithCondition('profiles', 'banner', `userID=${req.params.id}`)[0].banner
     }
 
-    console.log(userProfile);
-
     res.send(userProfile);
 })
 

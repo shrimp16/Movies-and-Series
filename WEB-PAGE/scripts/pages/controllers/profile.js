@@ -13,7 +13,7 @@ export default class Profile {
         this.id = this.params.id;
 
         this.verifyProfile();
-        document.title = 'My Shows List | Profile '; // Need to add username here
+        document.title = 'My Shows List | Profile ';
     }
 
     verifyProfile() {
