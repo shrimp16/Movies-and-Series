@@ -43,17 +43,6 @@ export default class Profile {
                             .then((image) => {
                                 document.getElementById('profile-banner').src = URL.createObjectURL(image);
                             }))
-                    document.getElementById('profile-header').innerHTML = document.getElementById('profile-header').innerHTML + `
-                        <div class="dropdown">
-                            <button class="dropbtn">Sort By</button>
-                            <div class="dropdown-content">
-                                <a>Title A-Z</a>
-                                <a>Older First</a>
-                                <a>Newer First</a>
-                                <a>Rate</a>
-                            </div>
-                        </div>
-                    `;
                 }))
     }
 
