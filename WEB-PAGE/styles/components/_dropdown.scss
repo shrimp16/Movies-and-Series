@@ -1,0 +1,47 @@
+@use '../utils/' as *;
+
+.dropbtn {
+    background-color: lightblue;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightblue;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px black;
+    border-radius: 10px;
+    z-index: 1;
+
+    a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            background-color: lightskyblue;
+        }
+    }
+}
+
+.dropdown:hover {
+    .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+        background-color: lightskyblue;
+    }
+}
