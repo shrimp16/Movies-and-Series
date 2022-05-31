@@ -56,6 +56,9 @@ export default class Profile {
                                 }))
                     }
                 }))
+
+        const cards = document.querySelectorAll('.card');
+        console.log(cards[0].innerHTML);
     }
 
     loadOwnProfile() {
@@ -96,6 +99,10 @@ export default class Profile {
         newCard.appendChild(img);
         newCard.appendChild(cardText);
 
-        this.body.appendChild(newCard);
+        this.appendCard(newCard);
+    }
+
+    appendCard(card) {
+        this.body.appendChild(card);
     }
 }
