@@ -1,3 +1,5 @@
+const cards = [];
+
 export default class Profile {
     constructor() {
         this.body = document.querySelector('#profile-body')
@@ -48,17 +50,17 @@ export default class Profile {
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
+                    cards.push(response);
                     for (let i = 0; i < response.length; i++) {
                         await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
                             .then(image => image.blob()
                                 .then((image) => {
                                     this.createCard(image, response[i].title);
+                                    cards[0][i].blob = image;
                                 }))
                     }
                 }))
-
-        const cards = document.querySelectorAll('.card');
-        console.log(cards[0].innerHTML);
+                console.log(cards);
     }
 
     loadOwnProfile() {
