@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const jsonParser = require('body-parser').json();
 
-const dbManager = require('../Persistance/dbManager');
-const upload = require('../Persistance/uploadManager');
+const dbManager = require('../../Persistance/dbManager');
+const upload = require('../../Persistance/uploadManager');
 
 router.post('/update-profile-picture/:id', upload.single('image'), (req, res) => {
     dbManager.editDataFromDatabase('profiles', `picture="${req.file.filename}"`, `userID="${req.params.id}"`);

@@ -3,8 +3,8 @@ const router = express.Router();
 const jsonParser = require('body-parser').json();
 const path = require('path');
 
-const authManager = require('../Users/auth');
-const dbManager = require('../Persistance/dbManager');
+const authManager = require('../../Users/auth');
+const dbManager = require('../../Persistance/dbManager');
 
 
 router.post('/register', jsonParser, (req, res) => {
