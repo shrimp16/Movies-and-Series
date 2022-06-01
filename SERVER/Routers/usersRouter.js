@@ -24,6 +24,12 @@ router.post('/login', jsonParser, (req, res) => {
 
 })
 
+router.post('/update-profile-picture/:id', upload.single('image'), (req, res) => {
+    console.log(req.file);
+    dbManager.editDataFromDatabase('profiles', `picture="${req.file.filename}"`, `userID="${req.params.id}"`);
+    res.send('Changed profile picture');
+})
+
 router.get('/user-content/:id', (req, res) => {
     
     res.send(dbManager.getDataFromTableWithCondition('content', null, `ownerID=${req.params.id}`));
