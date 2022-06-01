@@ -25,9 +25,13 @@ router.post('/login', jsonParser, (req, res) => {
 })
 
 router.post('/update-profile-picture/:id', upload.single('image'), (req, res) => {
-    console.log(req.file);
     dbManager.editDataFromDatabase('profiles', `picture="${req.file.filename}"`, `userID="${req.params.id}"`);
     res.send('Changed profile picture');
+})
+
+router.post('/update-profile-banner/:id', upload.single('image'), (req, res) => {
+    dbManager.editDataFromDatabase('profiles', `banner="${req.file.filename}"`, `userID="${req.params.id}"`);
+    res.send('Changed profile banner');
 })
 
 router.get('/user-content/:id', (req, res) => {
