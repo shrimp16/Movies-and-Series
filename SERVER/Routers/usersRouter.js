@@ -34,6 +34,11 @@ router.post('/update-profile-banner/:id', upload.single('image'), (req, res) => 
     res.send('Changed profile banner');
 })
 
+router.post('/update-description/:id', jsonParser, (req, res) => {
+    dbManager.editDataFromDatabase('profiles', `description="${req.body.description}"`, `userID="${req.params.id}"`);
+    res.send('Changed description');
+})
+
 router.get('/user-content/:id', (req, res) => {
     
     res.send(dbManager.getDataFromTableWithCondition('content', null, `ownerID=${req.params.id}`));
