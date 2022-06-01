@@ -5,7 +5,6 @@ const path = require('path');
 
 const authManager = require('../Users/auth');
 const dbManager = require('../Persistance/dbManager');
-const upload = require('../Persistance/uploadManager');
 
 
 router.post('/register', jsonParser, (req, res) => {
@@ -22,21 +21,6 @@ router.post('/login', jsonParser, (req, res) => {
         res.send(`${login}`);
     }
 
-})
-
-router.post('/update-profile-picture/:id', upload.single('image'), (req, res) => {
-    dbManager.editDataFromDatabase('profiles', `picture="${req.file.filename}"`, `userID="${req.params.id}"`);
-    res.send('Changed profile picture');
-})
-
-router.post('/update-profile-banner/:id', upload.single('image'), (req, res) => {
-    dbManager.editDataFromDatabase('profiles', `banner="${req.file.filename}"`, `userID="${req.params.id}"`);
-    res.send('Changed profile banner');
-})
-
-router.post('/update-description/:id', jsonParser, (req, res) => {
-    dbManager.editDataFromDatabase('profiles', `description="${req.body.description}"`, `userID="${req.params.id}"`);
-    res.send('Changed description');
 })
 
 router.get('/user-content/:id', (req, res) => {
