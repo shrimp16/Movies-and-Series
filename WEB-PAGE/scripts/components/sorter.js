@@ -20,7 +20,6 @@ export default class sorter {
     }
 
     sortReverse(obj, base) {
-        obj = this.sort(obj, base);
-        return obj.reverse();
+        return this.sort(obj, base).reverse();
     }
 }

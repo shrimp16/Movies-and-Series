@@ -48,23 +48,19 @@ export default class Profile {
                 }))
 
         document.getElementById('title').addEventListener('click', () => {
-            cards = sorter.sort(cards, 'title');
-            this.loadCards(cards);
+            this.loadCards(sorter.sort(cards, 'title'));
         })
 
         document.getElementById('older').addEventListener('click', () => {
-            cards = sorter.sort(cards, 'contentID');
-            this.loadCards(cards);
+            this.loadCards(sorter.sort(cards, 'contentID'));
         })
 
         document.getElementById('newer').addEventListener('click', () => {
-            cards = sorter.sortReverse(cards, 'contentID');
-            this.loadCards(cards);
+            this.loadCards(sorter.sortReverse(cards, 'contentID'));
         })
 
         document.getElementById('rate').addEventListener('click', () => {
-            cards = sorter.sortReverse(cards, 'rate');
-            this.loadCards(cards);
+            this.loadCards(sorter.sortReverse(cards, 'rate'));
         })
     }
 
