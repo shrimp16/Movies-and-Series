@@ -19,3 +19,30 @@ router.post('/update-description/:id', jsonParser, (req, res) => {
     dbManager.editDataFromDatabase('profiles', `description="${req.body.description}"`, `userID="${req.params.id}"`);
     res.send('Changed description');
 })
+
+router.post('/test-array', upload.array('images', 2), (req, res) => {
+    console.log(req.body);
+    console.log(req.files);
+
+    if(req.body.picture && !req.body.banner){
+        console.log('Change picture and not the banner');
+    }
+
+    if(!req.body.picture && req.body.banner){
+        console.log('Change banner but not picture');
+    }
+
+    if(req.body.picture && req.body.banner){
+        console.log('change both');
+    }
+
+    if(!req.body.picture && !req.body.banner){
+        console.log('dont change anything');
+    }
+
+    if(req.body.description){
+        console.log("change description");
+    }
+})
+
+module.exports = router;
