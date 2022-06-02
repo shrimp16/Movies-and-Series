@@ -1,15 +1,21 @@
-export function sort(obj, base){
-    return obj.sort((a, b) => {
+export default class sorter {
 
-        if(a[base] > b[base]){
-            return 1;
-        }
+    sort(obj, base) {
 
-        if(a[base] < b[base]){
-            return -1;
-        }
+        return obj.sort((a, b) => {
+            console.log(a[base]);
 
-        return 0;
+            if (a[base] > b[base]) {
+                return 1;
+            }
 
-    })
+            if (a[base] < b[base]) {
+                return -1;
+            }
+
+            return 0;
+
+        })
+
+    }
 }
