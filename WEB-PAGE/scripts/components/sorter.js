@@ -18,4 +18,9 @@ export default class sorter {
         })
 
     }
+
+    sortReverse(obj, base) {
+        obj = obj.sort(obj, base);
+        return obj.reverse();
+    }
 }

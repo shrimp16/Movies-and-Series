@@ -2,6 +2,8 @@ import Sorter from '../../components/sorter.js';
 
 const sorter = new Sorter();
 
+const sorts = ['title', 'older', 'newer', 'rate'];
+
 let cards = [];
 
 export default class Profile {
@@ -13,8 +15,6 @@ export default class Profile {
 
         const [hash, query] = this.url.split('#')[1].split('?');
         this.params = Object.fromEntries(new URLSearchParams(query));
-
-        //console.log(this.params);
 
         this.id = this.params.id;
 
@@ -48,14 +48,16 @@ export default class Profile {
                                 document.getElementById('profile-banner').src = URL.createObjectURL(image);
                             }))
                 }))
-        document.getElementById('title').addEventListener('click', () => {
-            cards = sorter.sort(cards[0], 'title');
-            console.log(cards);
-            this.body.innerHTML = '';
-            for(let i = 0; i < cards.length; i++){
-                this.createCard(cards[i].blob, cards[i].title);
-            }
-        })
+
+        for (let i = 0; i < sorts.length; i++) {
+            document.getElementById(sorts[i]).addEventListener('click', () => {
+                cards = sorter.sort(cards, sorts[i]);
+                this.body.innerHTML = '';
+                for (let i = 0; i < cards.length; i++) {
+                    this.createCard(cards[i].blob, cards[i].title);
+                }
+            })
+        }
     }
 
     async loadProfileBody() {
@@ -72,6 +74,7 @@ export default class Profile {
                                 }))
                     }
                 }))
+        cards = cards[0];
     }
 
     loadOwnProfile() {
