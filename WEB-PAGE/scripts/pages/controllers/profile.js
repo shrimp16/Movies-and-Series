@@ -49,18 +49,22 @@ export default class Profile {
 
         document.getElementById('title').addEventListener('click', () => {
             cards = sorter.sort(cards, 'title');
+            this.loadCards(cards);
         })
 
         document.getElementById('older').addEventListener('click', () => {
             cards = sorter.sort(cards, 'contentID');
+            this.loadCards(cards);
         })
 
         document.getElementById('newer').addEventListener('click', () => {
             cards = sorter.sortReverse(cards, 'contentID');
+            this.loadCards(cards);
         })
 
         document.getElementById('rate').addEventListener('click', () => {
             cards = sorter.sortReverse(cards, 'rate');
+            this.loadCards(cards);
         })
     }
 
@@ -73,12 +77,12 @@ export default class Profile {
                         await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
                             .then(image => image.blob()
                                 .then((image) => {
-                                    this.createCard(image, response[i].title);
                                     cards[0][i].blob = image;
                                 }))
                     }
                 }))
         cards = cards[0];
+        this.loadCards(cards);
     }
 
     loadOwnProfile() {
@@ -103,6 +107,13 @@ export default class Profile {
             window.location.href = '/#login';
             window.location.reload();
         })
+    }
+
+    loadCards(cards){
+        this.body.innerHTML = '';
+        for(let i = 0; i < cards.length; i++){
+            this.createCard(cards[i].blob, cards[i].title);
+        }
     }
 
     createCard(imageSrc, title) {
