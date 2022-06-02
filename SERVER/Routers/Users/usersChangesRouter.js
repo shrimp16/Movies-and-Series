@@ -20,20 +20,23 @@ router.post('/update-description/:id', jsonParser, (req, res) => {
     res.send('Changed description');
 })
 
-router.post('/test-array', upload.array('images', 2), (req, res) => {
+router.post('/test-array/:id', upload.array('images', 2), (req, res) => {
     console.log(req.body);
     console.log(req.files);
 
+    console.log(req.files[0]);
+
     if(req.body.picture && !req.body.banner){
-        console.log('Change picture and not the banner');
+        dbManager.editDataFromDatabase('profiles', `picture="${req.files[0].filename}"`, `userID="${req.params.id}"`);
     }
 
     if(!req.body.picture && req.body.banner){
-        console.log('Change banner but not picture');
+        dbManager.editDataFromDatabase('profiles', `banner="${req.files[0].filename}"`, `userID="${req.params.id}"`);
     }
 
     if(req.body.picture && req.body.banner){
-        console.log('change both');
+        dbManager.editDataFromDatabase('profiles', `picture="${req.files[0].filename}"`, `userID="${req.params.id}"`);
+        dbManager.editDataFromDatabase('profiles', `banner="${req.files[1].filename}"`, `userID="${req.params.id}"`);
     }
 
     if(!req.body.picture && !req.body.banner){
@@ -41,7 +44,7 @@ router.post('/test-array', upload.array('images', 2), (req, res) => {
     }
 
     if(req.body.description){
-        console.log("change description");
+        dbManager.editDataFromDatabase('profiles', `description="${req.body.description}"`, `userID="${req.params.id}"`);
     }
 })
 

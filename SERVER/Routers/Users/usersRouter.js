@@ -31,7 +31,7 @@ router.get('/user-content/:id', (req, res) => {
 
 router.get('/image/:image', (req, res) => {
 
-    res.sendFile(path.join(__dirname, `../Persistance/Images/${req.params.image}`));
+    res.sendFile(path.join(__dirname, `../../Persistance/Images/${req.params.image}`));
 
 })
 
