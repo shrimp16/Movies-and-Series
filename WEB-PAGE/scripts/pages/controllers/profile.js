@@ -2,8 +2,6 @@ import Sorter from '../../components/sorter.js';
 
 const sorter = new Sorter();
 
-const sorts = ['title', 'older', 'newer', 'rate'];
-
 let cards = [];
 
 export default class Profile {
@@ -49,15 +47,21 @@ export default class Profile {
                             }))
                 }))
 
-        for (let i = 0; i < sorts.length; i++) {
-            document.getElementById(sorts[i]).addEventListener('click', () => {
-                cards = sorter.sort(cards, sorts[i]);
-                this.body.innerHTML = '';
-                for (let i = 0; i < cards.length; i++) {
-                    this.createCard(cards[i].blob, cards[i].title);
-                }
-            })
-        }
+        document.getElementById('title').addEventListener('click', () => {
+            cards = sorter.sort(cards, 'title');
+        })
+
+        document.getElementById('older').addEventListener('click', () => {
+            cards = sorter.sort(cards, 'contentID');
+        })
+
+        document.getElementById('newer').addEventListener('click', () => {
+            cards = sorter.sortReverse(cards, 'contentID');
+        })
+
+        document.getElementById('rate').addEventListener('click', () => {
+            cards = sorter.sortReverse(cards, 'rate');
+        })
     }
 
     async loadProfileBody() {
