@@ -29,8 +29,6 @@ export default class ProfileEditor {
 
             let formData = new FormData();
 
-            console.log(this.descriptionInput.value);
-
             if (this.profilePicInput.files[0] && this.bannerInput.files[0]) {
                 formData.append('picture', true);
                 formData.append('banner', true);
@@ -56,10 +54,9 @@ export default class ProfileEditor {
                 method: 'POST',
                 body: formData
             })
-                .then(response => response.text()
-                    .then((response) => {
-                        console.log(response);
-                    }))
+                .then(() => {
+                    window.location.hash = `profile?id=${sessionStorage.userID || localStorage.userID}`;
+                })
 
         })
     }
