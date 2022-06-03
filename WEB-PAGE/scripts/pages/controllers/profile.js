@@ -65,20 +65,32 @@ export default class Profile {
     }
 
     async loadProfileBody() {
+        let cont = 0;
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
-                    cards.push(response);
-                    for (let i = 0; i < response.length; i++) {
+                    cards = response;
+                    for await (const show of response) {
+                        fetch(`http://192.168.1.103:50000/image/${show.image}`)
+                            .then(image => image.blob())
+                            .then((image) => {
+                                //console.log(cont);
+                                console.log(cards[cont]);
+                                cards[cont].blob = image;
+                                this.createCard(cards[cont].blob, show.title);
+                                cont++;
+                            })
+                    }
+                    //this.loadCards(cards);
+                    /*for (let i = 0; i < response.length; i++) {
                         await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
                             .then(image => image.blob()
                                 .then((image) => {
                                     cards[0][i].blob = image;
                                 }))
-                    }
+                    }*/
                 }))
-        cards = cards[0];
-        this.loadCards(cards);
+        //this.loadCards(cards);
     }
 
     loadOwnProfile() {
@@ -105,9 +117,9 @@ export default class Profile {
         })
     }
 
-    loadCards(cards){
+    loadCards(cards) {
         this.body.innerHTML = '';
-        for(let i = 0; i < cards.length; i++){
+        for (let i = 0; i < cards.length; i++) {
             this.createCard(cards[i].blob, cards[i].title);
         }
     }
