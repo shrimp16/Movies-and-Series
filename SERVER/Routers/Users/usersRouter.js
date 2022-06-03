@@ -37,6 +37,11 @@ router.get('/image/:image', (req, res) => {
 
 router.get('/user-profile/:id', (req, res) => {
 
+    if(dbManager.getDataFromTableWithCondition('users', null, `userID=${req.params.id}`).length < 1){
+        res.sendStatus(404);
+        return;
+    }
+
     let userProfile = {
         username: dbManager.getDataFromTableWithCondition('users', 'username', `userID=${req.params.id}`)[0].username,
         description: dbManager.getDataFromTableWithCondition('profiles', 'description', `userID=${req.params.id}`)[0].description,

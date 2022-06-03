@@ -30,42 +30,45 @@ export default class Profile {
 
     async loadProfileHeader() {
         await fetch(`http://192.168.1.103:50000/user-profile/${this.id}`)
-            .then(response => response.json()
-                .then(async (response) => {
-                    console.log(response);
-                    document.title = `My Shows List | Profile - ${response.username}`;
-                    document.getElementById('username').innerText = response.username;
-                    document.getElementById('description').innerText = response.description;
-                    await fetch(`http://192.168.1.103:50000/image/${response.picture}`)
-                        .then(image => image.blob()
-                            .then((image) => {
-                                document.getElementById('profile-picture').src = URL.createObjectURL(image);
-                            }))
-                    await fetch(`http://192.168.1.103:50000/image/${response.banner}`)
-                        .then(image => image.blob()
-                            .then((image) => {
-                                document.getElementById('profile-banner').src = URL.createObjectURL(image);
-                            }))
-                })
-                .catch((err) => {
+            .then((response) => {
+                if (response.status === 404) {
                     window.location.hash = '404';
-                }))
+                    return;
+                }
+                response.json()
+                    .then(async (response) => {
+                        console.log(response);
+                        document.title = `My Shows List | Profile - ${response.username}`;
+                        document.getElementById('username').innerText = response.username;
+                        document.getElementById('description').innerText = response.description;
+                        await fetch(`http://192.168.1.103:50000/image/${response.picture}`)
+                            .then(image => image.blob()
+                                .then((image) => {
+                                    document.getElementById('profile-picture').src = URL.createObjectURL(image);
+                                }))
+                        await fetch(`http://192.168.1.103:50000/image/${response.banner}`)
+                            .then(image => image.blob()
+                                .then((image) => {
+                                    document.getElementById('profile-banner').src = URL.createObjectURL(image);
+                                }))
+                    })
 
-        document.getElementById('title').addEventListener('click', () => {
-            this.loadCards(sorter.sort(cards, 'title'));
-        })
+                document.getElementById('title').addEventListener('click', () => {
+                    this.loadCards(sorter.sort(cards, 'title'));
+                })
 
-        document.getElementById('older').addEventListener('click', () => {
-            this.loadCards(sorter.sort(cards, 'contentID'));
-        })
+                document.getElementById('older').addEventListener('click', () => {
+                    this.loadCards(sorter.sort(cards, 'contentID'));
+                })
 
-        document.getElementById('newer').addEventListener('click', () => {
-            this.loadCards(sorter.sortReverse(cards, 'contentID'));
-        })
+                document.getElementById('newer').addEventListener('click', () => {
+                    this.loadCards(sorter.sortReverse(cards, 'contentID'));
+                })
 
-        document.getElementById('rate').addEventListener('click', () => {
-            this.loadCards(sorter.sortReverse(cards, 'rate'));
-        })
+                document.getElementById('rate').addEventListener('click', () => {
+                    this.loadCards(sorter.sortReverse(cards, 'rate'));
+                })
+            })
     }
 
     async loadProfileBody() {
