@@ -32,6 +32,7 @@ export default class Profile {
         await fetch(`http://192.168.1.103:50000/user-profile/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
+                    console.log(response);
                     document.title = `My Shows List | Profile - ${response.username}`;
                     document.getElementById('username').innerText = response.username;
                     document.getElementById('description').innerText = response.description;
@@ -45,6 +46,9 @@ export default class Profile {
                             .then((image) => {
                                 document.getElementById('profile-banner').src = URL.createObjectURL(image);
                             }))
+                })
+                .catch((err) => {
+                    window.location.hash = 'no-user';
                 }))
 
         document.getElementById('title').addEventListener('click', () => {
