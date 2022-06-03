@@ -48,7 +48,7 @@ export default class Profile {
                             }))
                 })
                 .catch((err) => {
-                    window.location.hash = 'no-user';
+                    window.location.hash = '404';
                 }))
 
         document.getElementById('title').addEventListener('click', () => {

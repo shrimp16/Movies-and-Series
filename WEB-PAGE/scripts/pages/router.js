@@ -5,8 +5,7 @@ const pages = [
     'recovery',
     'profile',
     'profile-editor',
-    'show-creator',
-    'no-user'
+    'show-creator'
 ]
 
 export default class Router {
