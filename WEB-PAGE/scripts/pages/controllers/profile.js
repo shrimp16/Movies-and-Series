@@ -65,12 +65,15 @@ export default class Profile {
     }
 
     async loadProfileBody() {
+        let time = Date.now();
         let cont = 0;
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
                 .then(async (response) => {
+                    //console.time();
                     cards = response;
-                    for await (const show of response) {
+                    /*for await (const show of response) {
+                        console.time();
                         fetch(`http://192.168.1.103:50000/image/${show.image}`)
                             .then(image => image.blob())
                             .then((image) => {
@@ -80,15 +83,20 @@ export default class Profile {
                                 this.createCard(cards[cont].blob, show.title);
                                 cont++;
                             })
-                    }
-                    //this.loadCards(cards);
-                    /*for (let i = 0; i < response.length; i++) {
-                        await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
-                            .then(image => image.blob()
-                                .then((image) => {
-                                    cards[0][i].blob = image;
-                                }))
+                        console.timeEnd();
                     }*/
+                    //console.timeEnd();
+                    //this.loadCards(cards);
+                    for (let i = 0; i < response.length; i++) {
+                        console.time();
+                        await fetch(`http://192.168.1.103:50000/image/${response[i].image}`)
+                        .then(image => image.blob()
+                        .then((image) => {
+                            cards[i].blob = image;
+                        }))
+                        console.timeEnd();
+                    }
+                    this.loadCards(cards);
                 }))
         //this.loadCards(cards);
     }
