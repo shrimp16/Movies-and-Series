@@ -55,21 +55,21 @@ export default class Profile {
                                 }))
                     })
 
-                /*document.getElementById('title').addEventListener('click', () => {
-                    this.loadCards(sorter.sort(cards, 'title'));
+                document.getElementById('title').addEventListener('click', () => {
+                    this.cardsLoader.loadCards(sorter.sort(cards, 'title'));
                 })
 
                 document.getElementById('older').addEventListener('click', () => {
-                    this.loadCards(sorter.sort(cards, 'contentID'));
+                    this.cardsLoader.loadCards(sorter.sort(cards, 'contentID'));
                 })
 
                 document.getElementById('newer').addEventListener('click', () => {
-                    this.loadCards(sorter.sortReverse(cards, 'contentID'));
+                    this.cardsLoader.loadCards(sorter.sortReverse(cards, 'contentID'));
                 })
 
                 document.getElementById('rate').addEventListener('click', () => {
-                    this.loadCards(sorter.sortReverse(cards, 'rate'));
-                })*/
+                    this.cardsLoader.loadCards(sorter.sortReverse(cards, 'rate'));
+                })
             })
     }
 
