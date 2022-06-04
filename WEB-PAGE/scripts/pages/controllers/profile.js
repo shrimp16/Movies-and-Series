@@ -75,24 +75,6 @@ export default class Profile {
             })
     }
 
-    /*async loadProfileBody() {
-        let cont = 0;
-        await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
-            .then(response => response.json()
-                .then(async (response) => {
-                    cards = response;
-                    for await (const show of response) {
-                        fetch(`http://192.168.1.103:50000/image/${show.image}`)
-                            .then(image => image.blob())
-                            .then((image) => {
-                                cards[cont].blob = image;
-                                this.createCard(cards[cont].blob, show.title);
-                                cont++;
-                            })
-                    }
-                }))
-    }*/
-
     loadOwnProfile() {
         const HTML = `<div class="user-profile-panel">
         <button class="blue-purple-btn" id="new-show">New Show</button>
@@ -116,32 +98,4 @@ export default class Profile {
             window.location.reload();
         })
     }
-
-    /*loadCards(cards) {
-        this.body.innerHTML = '';
-        for (let i = 0; i < cards.length; i++) {
-            this.createCard(cards[i].blob, cards[i].title);
-        }
-    }
-
-    createCard(imageSrc, title) {
-        let newCard = document.createElement('div');
-        newCard.classList.add('card');
-
-        let img = new Image();
-        img.src = URL.createObjectURL(imageSrc);
-
-        let cardText = document.createElement('div');
-        cardText.classList.add('card-title');
-        cardText.innerText = title;
-
-        newCard.appendChild(img);
-        newCard.appendChild(cardText);
-
-        this.appendCard(newCard);
-    }
-
-    appendCard(card) {
-        this.body.appendChild(card);
-    }*/
 }
