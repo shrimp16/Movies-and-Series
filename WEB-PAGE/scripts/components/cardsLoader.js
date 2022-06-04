@@ -3,7 +3,7 @@ let cards = [];
 export default class CardsLoader{
 
     constructor(){
-        this.body = document.getElementById('profile-body');
+        this.body = document.querySelector('#profile-body');
     }
 
     async getCards(id){

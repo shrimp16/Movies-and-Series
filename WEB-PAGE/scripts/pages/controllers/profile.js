@@ -20,12 +20,17 @@ export default class Profile {
         document.title = 'My Shows List | Profile ';
     }
 
-    verifyProfile() {
+    async verifyProfile() {
         if (this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')) {
             this.loadOwnProfile();
         }
         this.loadProfileHeader();
-        this.loadProfileBody();
+        
+        const CardsLoader = await import('../../components/cardsLoader.js');
+
+        const cardsLoader = new CardsLoader.default();
+
+        cardsLoader.getCards(this.id);
     }
 
     async loadProfileHeader() {
@@ -37,7 +42,6 @@ export default class Profile {
                 }
                 response.json()
                     .then(async (response) => {
-                        console.log(response);
                         document.title = `My Shows List | Profile - ${response.username}`;
                         document.getElementById('username').innerText = response.username;
                         document.getElementById('description').innerText = response.description;
@@ -53,7 +57,7 @@ export default class Profile {
                                 }))
                     })
 
-                document.getElementById('title').addEventListener('click', () => {
+                /*document.getElementById('title').addEventListener('click', () => {
                     this.loadCards(sorter.sort(cards, 'title'));
                 })
 
@@ -67,11 +71,11 @@ export default class Profile {
 
                 document.getElementById('rate').addEventListener('click', () => {
                     this.loadCards(sorter.sortReverse(cards, 'rate'));
-                })
+                })*/
             })
     }
 
-    async loadProfileBody() {
+    /*async loadProfileBody() {
         let cont = 0;
         await fetch(`http://192.168.1.103:50000/user-content/${this.id}`)
             .then(response => response.json()
@@ -87,7 +91,7 @@ export default class Profile {
                             })
                     }
                 }))
-    }
+    }*/
 
     loadOwnProfile() {
         const HTML = `<div class="user-profile-panel">
@@ -113,7 +117,7 @@ export default class Profile {
         })
     }
 
-    loadCards(cards) {
+    /*loadCards(cards) {
         this.body.innerHTML = '';
         for (let i = 0; i < cards.length; i++) {
             this.createCard(cards[i].blob, cards[i].title);
@@ -139,5 +143,5 @@ export default class Profile {
 
     appendCard(card) {
         this.body.appendChild(card);
-    }
+    }*/
 }
