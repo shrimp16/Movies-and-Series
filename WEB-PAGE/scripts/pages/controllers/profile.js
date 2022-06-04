@@ -1,4 +1,5 @@
 import Sorter from '../../components/sorter.js';
+import CardsLoader from '../../components/cardsLoader.js';
 
 const sorter = new Sorter();
 
@@ -8,6 +9,7 @@ export default class Profile {
     constructor() {
         this.body = document.querySelector('#profile-body')
         this.hash = window.location.hash;
+        this.cardsLoader = new CardsLoader();
 
         this.url = window.location.href;
 
@@ -25,12 +27,8 @@ export default class Profile {
             this.loadOwnProfile();
         }
         this.loadProfileHeader();
-        
-        const CardsLoader = await import('../../components/cardsLoader.js');
 
-        const cardsLoader = new CardsLoader.default();
-
-        cardsLoader.getCards(this.id);
+        this.cardsLoader.getCards(this.id);
     }
 
     async loadProfileHeader() {
