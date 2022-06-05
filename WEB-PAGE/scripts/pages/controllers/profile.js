@@ -28,7 +28,7 @@ export default class Profile {
         }
         this.loadProfileHeader();
 
-        this.cardsLoader.getCards(this.id);
+        this.cardsLoader.getCardsFromServer(this.id);
     }
 
     async loadProfileHeader() {
@@ -56,19 +56,19 @@ export default class Profile {
                     })
 
                 document.getElementById('title').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sort(cards, 'title'));
+                    this.cardsLoader.loadCards(sorter.sort(this.cardsLoader.getCards(), 'title'));
                 })
 
                 document.getElementById('older').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sort(cards, 'contentID'));
+                    this.cardsLoader.loadCards(sorter.sort(this.cardsLoader.getCards(), 'contentID'));
                 })
 
                 document.getElementById('newer').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sortReverse(cards, 'contentID'));
+                    this.cardsLoader.loadCards(sorter.sortReverse(this.cardsLoader.getCards(), 'contentID'));
                 })
 
                 document.getElementById('rate').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sortReverse(cards, 'rate'));
+                    this.cardsLoader.loadCards(sorter.sortReverse(this.cardsLoader.getCards(), 'rate'));
                 })
             })
     }

@@ -6,7 +6,7 @@ export default class CardsLoader{
         this.body = document.querySelector('#profile-body');
     }
 
-    async getCards(id){
+    async getCardsFromServer(id){
         let cont = 0;
         await fetch(`http://192.168.1.103:50000/user-content/${id}`)
             .then(response => response.json()
@@ -50,5 +50,9 @@ export default class CardsLoader{
 
     appendCard(card) {
         this.body.appendChild(card);
+    }
+
+    getCards(){
+        return cards;
     }
 }
