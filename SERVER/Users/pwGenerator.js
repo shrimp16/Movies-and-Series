@@ -11,6 +11,6 @@ module.exports = {
             characters.replace(char, '');
         }
 
-        return password
+        return password;
     }
 }

@@ -4,6 +4,7 @@ const jsonParser = require('body-parser').json();
 
 const dbManager = require('../../Persistance/dbManager');
 const upload = require('../../Persistance/uploadManager');
+const pwGenerator = require('../../Users/pwGenerator');
 
 router.post('/update-profile/:id', upload.array('images', 2), (req, res) => {
 
@@ -25,6 +26,12 @@ router.post('/update-profile/:id', upload.array('images', 2), (req, res) => {
     }
 
     res.send('Profile updated')
+})
+
+router.post('/generate-new-password/:id', (req, res) => {
+    let newPassword = pwGenerator.generate();
+    dbManager.editDataFromDatabase('users', `password="${newPassword}"`, `userID="${req.params.id}"`)
+    res.send('Password updated');
 })
 
 module.exports = router;
