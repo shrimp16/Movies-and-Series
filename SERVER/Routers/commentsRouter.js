@@ -4,7 +4,7 @@ const jsonParser = require('body-parser').json();
 const dbManager = require('../Persistance/dbManager');
 
 router.get('get-comments/:id', (req, res) => {
-    res.send(dbManager.getAllFromTable('comments'));
+    res.send(dbManager.getDataFromTableWithCondition('comments', null, `contentID=${req.params.id}`));
 })
 
 router.post('/add-comment', jsonParser, (req, res) => {
