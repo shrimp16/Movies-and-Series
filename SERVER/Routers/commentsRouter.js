@@ -3,6 +3,10 @@ const router = express.Router();
 const jsonParser = require('body-parser').json();
 const dbManager = require('../Persistance/dbManager');
 
+router.get('get-comments/:id', (req, res) => {
+    res.send(dbManager.getAllFromTable('comments'));
+})
+
 router.post('/add-comment', jsonParser, (req, res) => {
 
     const comment = {
