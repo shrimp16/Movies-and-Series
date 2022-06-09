@@ -34,4 +34,9 @@ router.post('/generate-new-password/:id', (req, res) => {
     res.send('Password updated');
 })
 
+router.post('/change-password/:id', jsonParser, (req, res) => {
+    dbManager.editDataFromDatabase('users', `password="${req.body.password}"`, `userID="${req.params.id}"`);
+    res.send('Password updated');
+})
+
 module.exports = router;
