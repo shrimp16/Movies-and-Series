@@ -19,7 +19,8 @@ export default class PasswordChanger {
             })
             .then(response => response.text()
             .then((response) => {
-                console.log(response);
+                window.location.hash = `profile?id=${this.id}`
+                alert(response);
             }))
         })
     }
