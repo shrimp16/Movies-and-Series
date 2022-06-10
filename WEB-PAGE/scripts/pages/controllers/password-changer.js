@@ -11,8 +11,11 @@ export default class PasswordChanger {
             fetch(`http://192.168.1.103:50000/change-password/${this.id}`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    password: this.passwordInput.value
-                })
+                    'password': this.passwordInput.value
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
             })
             .then(response => response.text()
             .then((response) => {
