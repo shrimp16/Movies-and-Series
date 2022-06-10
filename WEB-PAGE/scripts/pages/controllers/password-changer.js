@@ -6,6 +6,12 @@ export default class PasswordChanger {
     }
 
     setupElements(){
+
+        this.passwordInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter'){
+                document.getElementById('submit-new-password').click();
+            }
+        })
         console.log(this.id);
         document.getElementById('submit-new-password').addEventListener('click', () => {
             fetch(`http://192.168.1.103:50000/change-password/${this.id}`, {
