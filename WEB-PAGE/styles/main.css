@@ -47,6 +47,65 @@ table {
   border-spacing: 0;
 }
 
+.logo h1 {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.not-found {
+  font-family: "Fredericka the Great", cursive;
+  background-image: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.not-found h1 {
+  font-size: 5rem;
+}
+.not-found h2 {
+  font-size: 3rem;
+}
+
+.login-title {
+  font-size: 2.5rem;
+}
+
+.register-title {
+  font-size: 2.5rem;
+}
+
+.profile-eidtor-body h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.profile-eidtor-body p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.user-info h1 {
+  font-size: 2.5rem;
+}
+.user-info h2 {
+  width: 30rem;
+  font-size: 1.25rem;
+}
+
+.card-title {
+  position: absolute;
+  inset: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 0;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -73,11 +132,6 @@ header * {
   margin-top: -0.5rem;
   height: 3rem;
   width: 3.5rem;
-}
-.logo h1 {
-  font-family: "Shadows Into Light", cursive;
-  font-size: 2rem;
-  text-align: center;
 }
 
 .search input {
@@ -193,10 +247,6 @@ body {
   margin-top: 10px;
 }
 
-.register-title {
-  font-size: 2.5rem;
-}
-
 .login-body {
   width: 15rem;
   margin: auto;
@@ -221,10 +271,6 @@ body {
 }
 .login-body * {
   margin-top: 10px;
-}
-
-.login-title {
-  font-size: 2.5rem;
 }
 
 .forgot-password-body {
@@ -263,11 +309,6 @@ body {
   width: fit-content;
   margin: auto;
   text-align: center;
-  font-family: "Fredericka the Great", cursive;
-  background-image: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -312,13 +353,6 @@ body {
   margin-top: 2.5rem;
   text-align: center;
 }
-.user-info h1 {
-  font-size: 2.5rem;
-}
-.user-info h2 {
-  width: 30rem;
-  font-size: 1.25rem;
-}
 
 .profile-body {
   width: 80%;
@@ -357,19 +391,6 @@ body {
   aspect-ratio: 16/9;
   border-radius: 0.5rem;
   transition: 0.3s;
-}
-.profile-body .card .card-title {
-  position: absolute;
-  inset: 0;
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-  opacity: 0;
 }
 .profile-body .card:hover img {
   filter: blur(5px);
@@ -456,14 +477,6 @@ input[type=file] {
 }
 .profile-editor-body * {
   margin: 3px;
-}
-.profile-editor-body h1 {
-  font-size: 2rem;
-  text-align: center;
-}
-.profile-editor-body p {
-  font-size: 1.25rem;
-  text-align: center;
 }
 
 .banner-edit {
@@ -650,4 +663,29 @@ input[type=file] {
     border: 3px black solid;
     border-radius: 0.8rem;
   }
+}
+.password-changer-body {
+  width: 15rem;
+  margin: auto;
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+.password-changer-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(360deg, rgb(128, 0, 255), royalblue);
+}
+.password-changer-body * {
+  margin-top: 10px;
 }/*# sourceMappingURL=main.css.map */
