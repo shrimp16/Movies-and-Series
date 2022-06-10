@@ -28,16 +28,20 @@
 }
 
 .login-title {
+    font-family: $title-font;
     font-size: 2.5rem;
 }
 
 .register-title {
+    font-family: $title-font;
     font-size: 2.5rem;
 }
 
 .profile-eidtor-body {
 
     h1 {
+
+        font-family: $title-font;
         font-size: 2rem;
         text-align: center;
     }
@@ -52,6 +56,8 @@
 .password-changer-body {
     
     h1 {
+
+        font-family: $title-font;
         font-size: 1.75rem;
     }
 

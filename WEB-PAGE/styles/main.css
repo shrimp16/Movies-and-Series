@@ -68,14 +68,17 @@ table {
 }
 
 .login-title {
+  font-family: "Shadows Into Light", cursive;
   font-size: 2.5rem;
 }
 
 .register-title {
+  font-family: "Shadows Into Light", cursive;
   font-size: 2.5rem;
 }
 
 .profile-eidtor-body h1 {
+  font-family: "Shadows Into Light", cursive;
   font-size: 2rem;
   text-align: center;
 }
@@ -85,6 +88,7 @@ table {
 }
 
 .password-changer-body h1 {
+  font-family: "Shadows Into Light", cursive;
   font-size: 1.75rem;
 }
 
