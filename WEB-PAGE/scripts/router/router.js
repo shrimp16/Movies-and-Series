@@ -43,16 +43,6 @@ export default class Router {
 
         const loader = await import(`./pages/${hash}.js`);
 
-        //await this.loadPage(hash);
-
         new loader.default();
-    }
-
-    async loadPage(page) {
-        await fetch(`/scripts/pages/structures/${page}.html`)
-            .then(response => response.text()
-                .then((response) => {
-                    this.body.innerHTML = response;
-                }))
     }
 }
