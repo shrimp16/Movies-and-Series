@@ -105,7 +105,7 @@ export default class Profile {
             </div>
         </div>
         `
-
+        this.loadEventListeners();
         this.body.innerHTML = HTML;
     }
 
@@ -130,5 +130,25 @@ export default class Profile {
         this.body.innerHTML += HTML;
 
         console.timeEnd();
+    }
+
+    loadEventListeners(){
+
+        document.getElementById('title').addEventListener('click', () => {
+
+        })
+
+        document.getElementById('older').addEventListener('click', () => {
+
+        })
+
+        document.getElementById('newer').addEventListener('click', () => {
+
+        })
+
+        document.getElementById('rate').addEventListener('click', () => {
+
+        })
+        
     }
 }
