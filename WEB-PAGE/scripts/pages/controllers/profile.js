@@ -1,4 +1,5 @@
-const userData = {};
+let userData = {};
+let cards;
 
 export default class Profile {
 
@@ -13,10 +14,11 @@ export default class Profile {
 
         this.id = this.params.id;
 
-        this.getData(this.id);
+        this.getUserData(this.id);
+        this.getCards(this.id);
     }
 
-    async getData(id) {
+    async getUserData(id) {
 
         await fetch(`http://192.168.1.103:50000/user-profile/${id}`)
             .then(async (response) => {
@@ -43,10 +45,30 @@ export default class Profile {
 
                     })
             })
-        this.loadPage();
+
+        this.loadProfileHeader();
+        this.loadProfileBody();
+
     }
 
-    loadPage() {
+    async getCards(id) {
+        let cont = 0;
+        await fetch(`http://192.168.1.103:50000/user-content/${id}`)
+            .then(response => response.json()
+                .then(async (shows) => {
+                    cards = shows;
+                    for await (const show of shows) {
+                        fetch(`http://192.168.1.103:50000/image/${show.image}`)
+                            .then(image => image.blob()
+                                .then((image) => {
+                                    cards[cont].image = URL.createObjectURL(image);
+                                    cont++;
+                                }))
+                    }
+                }))
+    }
+
+    loadProfileHeader() {
         let HTML = `
         <div class="profile-header" id="profile-header">
             <div class="background">
@@ -85,5 +107,28 @@ export default class Profile {
         `
 
         this.body.innerHTML = HTML;
+    }
+
+    loadProfileBody() {
+        let HTML = `
+            <div class="profile-body">
+        `
+
+        for (let i = 0; i < cards.length; i++) {
+            HTML += `
+                <div class="card">
+                    <img src="${cards[i].image}">
+                    <div class="card-title">
+                        ${cards[i].title}
+                    </div>
+                </div>
+            `
+        }
+
+        HTML += `</div>`
+
+        this.body.innerHTML += HTML;
+
+        console.timeEnd();
     }
 }
