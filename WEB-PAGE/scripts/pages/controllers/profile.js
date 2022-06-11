@@ -1,3 +1,7 @@
+import Sorter from '../../components/sorter.js';
+
+const sorter = new Sorter();
+
 let userData = {};
 let cards;
 
@@ -105,7 +109,6 @@ export default class Profile {
             </div>
         </div>
         `
-        this.loadEventListeners();
         this.body.innerHTML = HTML;
     }
 
@@ -129,26 +132,30 @@ export default class Profile {
 
         this.body.innerHTML += HTML;
 
-        console.timeEnd();
+        this.loadEventListeners();
     }
 
     loadEventListeners(){
 
         document.getElementById('title').addEventListener('click', () => {
-
+            cards = sorter.sort(cards, 'title');
+            this.loadProfileBody();
         })
 
         document.getElementById('older').addEventListener('click', () => {
-
+            cards = sorter.sort(cards, 'contentID');
+            this.loadProfileBody();
         })
 
         document.getElementById('newer').addEventListener('click', () => {
-
+            cards = sorter.sortReverse(cards, 'contentID');
+            this.loadProfileBody();
         })
 
         document.getElementById('rate').addEventListener('click', () => {
-
+            cards = sorter.sortReverse(cards, 'rate');
+            this.loadProfileBody();
         })
-        
+
     }
 }
