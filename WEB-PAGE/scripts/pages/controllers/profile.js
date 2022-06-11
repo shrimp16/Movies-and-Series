@@ -116,8 +116,6 @@ export default class Profile {
     loadProfileBody() {
         let HTML = '';
 
-        console.log(HTML);
-
         for (let i = 0; i < cards.length; i++) {
             HTML += `
                 <div class="card">
@@ -128,8 +126,6 @@ export default class Profile {
                 </div>
             `
         }
-
-        console.log(HTML);
 
         document.getElementById('profile-body').innerHTML = HTML;
 
