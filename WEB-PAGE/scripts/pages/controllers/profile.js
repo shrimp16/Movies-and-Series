@@ -108,14 +108,15 @@ export default class Profile {
                 </div>
             </div>
         </div>
+        <div class="profile-body" id="profile-body"></div>
         `
         this.body.innerHTML = HTML;
     }
 
     loadProfileBody() {
-        let HTML = `
-            <div class="profile-body">
-        `
+        let HTML = '';
+
+        console.log(HTML);
 
         for (let i = 0; i < cards.length; i++) {
             HTML += `
@@ -128,9 +129,9 @@ export default class Profile {
             `
         }
 
-        HTML += `</div>`
+        console.log(HTML);
 
-        this.body.innerHTML += HTML;
+        document.getElementById('profile-body').innerHTML = HTML;
 
         this.loadEventListeners();
     }
