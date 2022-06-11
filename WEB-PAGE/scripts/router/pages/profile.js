@@ -5,6 +5,9 @@ const sorter = new Sorter();
 let userData = {};
 let cards;
 
+let cardsArr = [];
+let loadControl;
+
 export default class Profile {
 
     constructor() {
@@ -61,15 +64,27 @@ export default class Profile {
             .then(response => response.json()
                 .then(async (shows) => {
                     cards = shows;
+                    loadControl = cards.length;
+                    console.log(loadControl);
                     for await (const show of shows) {
                         fetch(`http://192.168.1.103:50000/image/${show.image}`)
                             .then(image => image.blob()
                                 .then((image) => {
+                                    cardsArr.push(URL.createObjectURL(image));
                                     cards[cont].image = URL.createObjectURL(image);
                                     cont++;
                                 }))
                     }
                 }))
+    }
+
+    async getImage(img, id){
+        await fetch(`http://192.168.1.103:50000/image/${img}`)
+            .then(image => image.blob()
+                .then((image) => {
+                    cards[id].image = URL.createObjectURL(image);
+                }))
+        console.log(cards[id].image);
     }
 
     loadProfileHeader() {
@@ -113,13 +128,21 @@ export default class Profile {
         this.body.innerHTML = HTML;
     }
 
-    loadProfileBody() {
+    async loadProfileBody() {
+
         let HTML = '';
 
         for (let i = 0; i < cards.length; i++) {
+            console.log(cards[i].image);
+
+            if(cards[i].image.includes('blob') === false){
+                console.log("1 step closer");
+                await this.getImage(cards[i].image, i);
+            }
+
             HTML += `
                 <div class="card">
-                    <img src="${cards[i].image}">
+                    <img src="${cardsArr[i]}">
                     <div class="card-title">
                         ${cards[i].title}
                     </div>
