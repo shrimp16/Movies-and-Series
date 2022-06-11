@@ -1,4 +1,4 @@
-import Router from './pages/router.js';
+import Router from './router/router.js'
 
 document.body.onload = () => {
     new Router();
