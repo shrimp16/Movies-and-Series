@@ -1,15 +1,10 @@
-import Sorter from '../../components/sorter.js';
-import CardsLoader from '../../components/cardsLoader.js';
-
-const sorter = new Sorter();
-
-let cards = [];
+const userData = {};
 
 export default class Profile {
+
     constructor() {
-        this.body = document.querySelector('#profile-body')
-        this.hash = window.location.hash;
-        this.cardsLoader = new CardsLoader();
+
+        this.body = document.getElementById('body');
 
         this.url = window.location.href;
 
@@ -18,82 +13,77 @@ export default class Profile {
 
         this.id = this.params.id;
 
-        this.verifyProfile();
-        document.title = 'My Shows List | Profile ';
+        this.getData(this.id);
     }
 
-    async verifyProfile() {
-        if (this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')) {
-            this.loadOwnProfile();
-        }
-        this.loadProfileHeader();
+    async getData(id) {
 
-        this.cardsLoader.getCardsFromServer(this.id);
-    }
-
-    async loadProfileHeader() {
-        await fetch(`http://192.168.1.103:50000/user-profile/${this.id}`)
-            .then((response) => {
+        await fetch(`http://192.168.1.103:50000/user-profile/${id}`)
+            .then(async (response) => {
                 if (response.status === 404) {
                     window.location.hash = '404';
                     return;
                 }
-                response.json()
+                await response.json()
                     .then(async (response) => {
-                        document.title = `My Shows List | Profile - ${response.username}`;
-                        document.getElementById('username').innerText = response.username;
-                        document.getElementById('description').innerText = response.description;
+                        userData.id = id;
+                        userData.username = response.username;
+                        userData.description = response.description;
+
                         await fetch(`http://192.168.1.103:50000/image/${response.picture}`)
                             .then(image => image.blob()
                                 .then((image) => {
-                                    document.getElementById('profile-picture').src = URL.createObjectURL(image);
+                                    userData.picture = URL.createObjectURL(image);
                                 }))
                         await fetch(`http://192.168.1.103:50000/image/${response.banner}`)
                             .then(image => image.blob()
                                 .then((image) => {
-                                    document.getElementById('profile-banner').src = URL.createObjectURL(image);
+                                    userData.banner = URL.createObjectURL(image);
                                 }))
+
                     })
-
-                document.getElementById('title').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sort(this.cardsLoader.getCards(), 'title'));
-                })
-
-                document.getElementById('older').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sort(this.cardsLoader.getCards(), 'contentID'));
-                })
-
-                document.getElementById('newer').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sortReverse(this.cardsLoader.getCards(), 'contentID'));
-                })
-
-                document.getElementById('rate').addEventListener('click', () => {
-                    this.cardsLoader.loadCards(sorter.sortReverse(this.cardsLoader.getCards(), 'rate'));
-                })
             })
+        this.loadPage();
     }
 
-    loadOwnProfile() {
-        const HTML = `<div class="user-profile-panel">
-        <button class="blue-purple-btn" id="new-show">New Show</button>
-        <button class="blue-purple-btn" id="edit-profile">Edit Profile</button>
-        <button class="blue-purple-btn" id="log-out">Log out</button>
-        </div>`;
-        document.getElementById('profile-header').innerHTML = document.getElementById('profile-header').innerHTML + HTML;
+    loadPage() {
+        let HTML = `
+        <div class="profile-header" id="profile-header">
+            <div class="background">
+                <img id="profile-banner" src="${userData.banner}">
+            </div>
+            <div class="profile-picture">
+                <img id="profile-picture" src="${userData.picture}">
+            </div>
+            <div class="user-info">
+                <h1 id="username">${userData.username}</h1>
+                <h2 id="description">${userData.description}</h2>
+            </div>
+            <br>
+        `
+        if (this.id === localStorage.getItem('userID') || this.id === sessionStorage.getItem('userID')) {
+            HTML += `
+            <div class="user-profile-panel">
+                <button class="blue-purple-btn" id="new-show">New Show</button>
+                <button class="blue-purple-btn" id="edit-profile">Edit Profile</button>
+                <button class="blue-purple-btn" id="log-out">Log out</button>
+            </div>
+            `;
+        }
 
-        document.getElementById('new-show').addEventListener('click', () => {
-            window.location.href = '/#show-creator';
-        })
+        HTML += `
+            <div class="dropdown">
+                <button class="dropbtn">Sort By</button>
+                <div class="dropdown-content">
+                    <a id="title">Title</a>
+                    <a id="older">Older First</a>
+                    <a id="newer">Newer First</a>
+                    <a id="rate">Rate</a>
+                </div>
+            </div>
+        </div>
+        `
 
-        document.getElementById('edit-profile').addEventListener('click', () => {
-            window.location.href = '/#profile-editor';
-        })
-
-        document.getElementById('log-out').addEventListener('click', () => {
-            sessionStorage.clear();
-            localStorage.clear();
-            window.location.href = '/#login';
-            window.location.reload();
-        })
+        this.body.innerHTML = HTML;
     }
 }

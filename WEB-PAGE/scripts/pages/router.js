@@ -20,6 +20,7 @@ export default class Router {
     }
 
     async routeChangeHandler() {
+        console.time();
         let hash = window.location.hash.substring(1);
         hash = hash.split('?', hash.length - 1)[0];
         console.log(hash);
@@ -42,10 +43,9 @@ export default class Router {
 
         const loader = await import(`./controllers/${hash}.js`);
 
-        await this.loadPage(hash);
+        //await this.loadPage(hash);
 
         new loader.default();
-
     }
 
     async loadPage(page) {

@@ -22,6 +22,7 @@ export default class CardsLoader{
                             })
                     }
                 }))
+                console.timeEnd();
     }
 
     loadCards(cards) {
