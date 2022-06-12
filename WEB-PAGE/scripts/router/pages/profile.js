@@ -118,12 +118,14 @@ export default class Profile {
         let HTML = '';
 
         for (let i = 0; i < cards.length; i++) {
-            
-            await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
-                .then(image => image.blob()
-                    .then((image) => {
-                        cards[i].image = URL.createObjectURL(image);
-                    }))
+
+            if (!cards[i].image.includes('blob')) {
+                await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
+                    .then(image => image.blob()
+                        .then((image) => {
+                            cards[i].image = URL.createObjectURL(image);
+                        }))
+            }
 
             HTML += `
                 <div class="card">
