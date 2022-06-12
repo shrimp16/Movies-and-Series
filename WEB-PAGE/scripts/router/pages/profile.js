@@ -62,18 +62,18 @@ export default class Profile {
             .then(response => response.json()
                 .then(async (shows) => {
                     cards = shows;
-                    for await (const show of shows) {
+                    /*for await (const show of shows) {
                         fetch(`http://192.168.1.103:50000/image/${show.image}`)
                             .then(image => image.blob()
                                 .then((image) => {
                                     cards[cont].image = URL.createObjectURL(image);
                                     cont++;
-                                }))
-                    }
+                                })) 
+                    }*/
                 }))
     }
 
-    async debugImage(img, id){
+    async debugImage(img, id) {
         await fetch(`http://192.168.1.103:50000/image/${img}`)
             .then(image => image.blob()
                 .then((image) => {
@@ -128,9 +128,15 @@ export default class Profile {
 
         for (let i = 0; i < cards.length; i++) {
 
-            if(cards[i].image.includes('blob') === false){
+            /*if(cards[i].image.includes('blob') === false){
                 await this.debugImage(cards[i].image, i);
-            }
+            }*/
+
+            await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
+                .then(image => image.blob()
+                    .then((image) => {
+                        cards[i].image = URL.createObjectURL(image);
+                    }))
 
             HTML += `
                 <div class="card">
@@ -147,7 +153,7 @@ export default class Profile {
         this.loadEventListeners();
     }
 
-    loadEventListeners(){
+    loadEventListeners() {
 
         document.getElementById('title').addEventListener('click', () => {
             cards = sorter.sort(cards, 'title');
