@@ -57,19 +57,10 @@ export default class Profile {
     }
 
     async getCards(id) {
-        let cont = 0;
         await fetch(`http://192.168.1.103:50000/user-content/${id}`)
             .then(response => response.json()
                 .then(async (shows) => {
                     cards = shows;
-                    /*for await (const show of shows) {
-                        fetch(`http://192.168.1.103:50000/image/${show.image}`)
-                            .then(image => image.blob()
-                                .then((image) => {
-                                    cards[cont].image = URL.createObjectURL(image);
-                                    cont++;
-                                })) 
-                    }*/
                 }))
     }
 
@@ -127,11 +118,7 @@ export default class Profile {
         let HTML = '';
 
         for (let i = 0; i < cards.length; i++) {
-
-            /*if(cards[i].image.includes('blob') === false){
-                await this.debugImage(cards[i].image, i);
-            }*/
-
+            
             await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
                 .then(image => image.blob()
                     .then((image) => {
