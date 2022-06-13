@@ -1,4 +1,47 @@
-let cards = [];
+let cards;
+
+export default class CardsLoader {
+
+    constructor() {
+        this.body = document.getElementById('#profile-body');
+    }
+
+    async getCards(id) {
+        await fetch(`http://192.168.1.103:50000/user-content/${id}`)
+            .then(response => response.json()
+                .then((shows) => {
+                    cards = shows;
+                }))
+    }
+
+    async loadCards() {
+        let HTML = '';
+
+        for (let i = 0; i < cards.length; i++) {
+
+            await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
+                .then(image => image.blob()
+                    .then((image) => {
+                        cards[i].image = URL.createObjectURL(image);
+                    }))
+
+            HTML += `
+                    <div class="card">
+                        <img src="${cards[i].image}">
+                        <div class="card-title">
+                            ${cards[i].title}
+                        </div>
+                    </div>
+                    `
+        }
+
+        document.getElementById('profile-body').innerHTML = HTML;
+
+    }
+
+}
+
+/*let cards = [];
 
 export default class CardsLoader{
 
@@ -56,4 +99,4 @@ export default class CardsLoader{
     getCards(){
         return cards;
     }
-}
+}*/

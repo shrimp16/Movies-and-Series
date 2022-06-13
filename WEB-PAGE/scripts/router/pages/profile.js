@@ -1,6 +1,8 @@
 import Sorter from '../../components/sorter.js';
+import CardsLoader from '../../components/cardsLoader.js';
 
 const sorter = new Sorter();
+const cardsLoader = new CardsLoader();
 
 let userData = {};
 let cards;
@@ -19,7 +21,8 @@ export default class Profile {
         this.id = this.params.id;
 
         this.getUserData(this.id);
-        this.getCards(this.id);
+        //this.getCards(this.id);
+        cardsLoader.getCards(this.id);
 
     }
 
@@ -52,7 +55,8 @@ export default class Profile {
             })
 
         this.loadProfileHeader();
-        this.loadProfileBody();
+        //this.loadProfileBody();
+        cardsLoader.loadCards();
 
     }
 
