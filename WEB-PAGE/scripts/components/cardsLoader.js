@@ -1,3 +1,7 @@
+import Sorter from './sorter.js';
+
+const sorter = new Sorter();
+
 let cards;
 
 export default class CardsLoader {
@@ -19,11 +23,13 @@ export default class CardsLoader {
 
         for (let i = 0; i < cards.length; i++) {
 
-            await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
-                .then(image => image.blob()
-                    .then((image) => {
-                        cards[i].image = URL.createObjectURL(image);
-                    }))
+            if (!cards[i].image.includes('blob')) {
+                await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
+                    .then(image => image.blob()
+                        .then((image) => {
+                            cards[i].image = URL.createObjectURL(image);
+                        }))
+            }
 
             HTML += `
                     <div class="card">
@@ -36,6 +42,32 @@ export default class CardsLoader {
         }
 
         document.getElementById('cards-body').innerHTML = HTML;
+
+        this.loadSorter();
+
+    }
+
+    loadSorter() {
+
+        document.getElementById('title').addEventListener('click', () => {
+            cards = sorter.sort(cards, 'title');
+            this.loadCards();
+        })
+
+        document.getElementById('older').addEventListener('click', () => {
+            cards = sorter.sort(cards, 'contentID');
+            this.loadCards();
+        })
+
+        document.getElementById('newer').addEventListener('click', () => {
+            cards = sorter.sortReverse(cards, 'contentID');
+            this.loadCards();
+        })
+
+        document.getElementById('rate').addEventListener('click', () => {
+            cards = sorter.sortReverse(cards, 'rate');
+            this.loadCards();
+        })
 
     }
 
