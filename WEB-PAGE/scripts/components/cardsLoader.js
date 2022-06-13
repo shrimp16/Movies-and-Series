@@ -35,7 +35,7 @@ export default class CardsLoader {
                     `
         }
 
-        document.getElementById('profile-body').innerHTML = HTML;
+        document.getElementById('cards-body').innerHTML = HTML;
 
     }
 

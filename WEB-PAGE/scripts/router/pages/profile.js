@@ -112,7 +112,7 @@ export default class Profile {
                 </div>
             </div>
         </div>
-        <div class="profile-body" id="profile-body"></div>
+        <div class="profile-body" id="cards-body"></div>
         `
         this.body.innerHTML = HTML;
     }
