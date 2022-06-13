@@ -1,11 +1,8 @@
-import Sorter from '../../components/sorter.js';
 import CardsLoader from '../../components/cardsLoader.js';
 
-const sorter = new Sorter();
 const cardsLoader = new CardsLoader();
 
 let userData = {};
-let cards;
 
 export default class Profile {
 
@@ -21,7 +18,6 @@ export default class Profile {
         this.id = this.params.id;
 
         this.getUserData(this.id);
-        //this.getCards(this.id);
         cardsLoader.getCards(this.id);
 
     }
@@ -55,17 +51,8 @@ export default class Profile {
             })
 
         this.loadProfileHeader();
-        //this.loadProfileBody();
         cardsLoader.loadCards();
 
-    }
-
-    async getCards(id) {
-        await fetch(`http://192.168.1.103:50000/user-content/${id}`)
-            .then(response => response.json()
-                .then(async (shows) => {
-                    cards = shows;
-                }))
     }
 
     async debugImage(img, id) {
@@ -115,58 +102,5 @@ export default class Profile {
         <div class="profile-body" id="cards-body"></div>
         `
         this.body.innerHTML = HTML;
-    }
-
-    async loadProfileBody() {
-
-        let HTML = '';
-
-        for (let i = 0; i < cards.length; i++) {
-
-            if (!cards[i].image.includes('blob')) {
-                await fetch(`http://192.168.1.103:50000/image/${cards[i].image}`)
-                    .then(image => image.blob()
-                        .then((image) => {
-                            cards[i].image = URL.createObjectURL(image);
-                        }))
-            }
-
-            HTML += `
-                <div class="card">
-                    <img src="${cards[i].image}">
-                    <div class="card-title">
-                        ${cards[i].title}
-                    </div>
-                </div>
-            `
-        }
-
-        document.getElementById('profile-body').innerHTML = HTML;
-
-        this.loadEventListeners();
-    }
-
-    loadEventListeners() {
-
-        document.getElementById('title').addEventListener('click', () => {
-            cards = sorter.sort(cards, 'title');
-            this.loadProfileBody();
-        })
-
-        document.getElementById('older').addEventListener('click', () => {
-            cards = sorter.sort(cards, 'contentID');
-            this.loadProfileBody();
-        })
-
-        document.getElementById('newer').addEventListener('click', () => {
-            cards = sorter.sortReverse(cards, 'contentID');
-            this.loadProfileBody();
-        })
-
-        document.getElementById('rate').addEventListener('click', () => {
-            cards = sorter.sortReverse(cards, 'rate');
-            this.loadProfileBody();
-        })
-
     }
 }
