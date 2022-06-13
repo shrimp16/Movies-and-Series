@@ -86,6 +86,8 @@ export default class Profile {
                 <button class="blue-purple-btn" id="log-out">Log out</button>
             </div>
             `;
+
+            this.loadUserButtons();
         }
 
         HTML += `
@@ -102,5 +104,24 @@ export default class Profile {
         <div class="profile-body" id="cards-body"></div>
         `
         this.body.innerHTML = HTML;
+    }
+
+    loadUserButtons() {
+
+        document.getElementById('new-show').addEventListener('click', () => {
+            window.location.href = '/#show-creator';
+        })
+
+        document.getElementById('edit-profile').addEventListener('click', () => {
+            window.location.href = '/#profile-editor';
+        })
+
+        document.getElementById('log-out').addEventListener('click', () => {
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = '/#login';
+            window.location.reload();
+        })
+        
     }
 }
