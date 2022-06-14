@@ -87,7 +87,9 @@ export default class Profile {
             </div>
             `;
 
-            this.loadUserButtons();
+            setTimeout(() => {
+                this.loadUserButtons();
+            }, 1000)
         }
 
         HTML += `
@@ -122,6 +124,6 @@ export default class Profile {
             window.location.href = '/#login';
             window.location.reload();
         })
-        
+
     }
 }
