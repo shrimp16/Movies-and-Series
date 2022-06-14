@@ -32,7 +32,6 @@ export default class Login {
     }
 
     setupElements() {
-        console.log("xd");
         let usernameInput = document.getElementById('login-un');
         let passwordInput = document.getElementById('login-pw');
 
