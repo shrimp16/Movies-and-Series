@@ -37,7 +37,31 @@ export default class Show {
                                 }))
                     })
             })
-        console.log(showData);
+        console.table(showData);
+        this.loadPage();
+    }
+
+    loadPage() {
+        let HTML = `
+            <div class="show-body">
+                <div class="show-image">
+
+                </div>
+
+                <div class="show-contents">
+                    <div class="show-details">
+                    
+                    </div>
+
+                    <div class="show-comments">
+                    
+                    </div>
+                </div>
+
+            </div>
+        `
+
+        this.body.innerHTML = HTML;
     }
 
 }
