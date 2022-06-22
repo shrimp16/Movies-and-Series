@@ -55,6 +55,8 @@ export default class Show {
                         <p class="show-description">Description: ${showData.description}</p>
                     </div>
 
+                    <div class="bar"></div>
+
                     <div class="show-comments">
                         <p>WIP</p>
                     </div>

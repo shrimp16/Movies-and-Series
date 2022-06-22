@@ -1,3 +1,5 @@
+@use '../utils/' as *;
+
 .show-body {
     display: flex;
     flex-direction: row;
@@ -8,27 +10,27 @@
 .show-image {
     height: 80vh;
     width: 25vw;
-    border: 2px black solid;
     margin: 5px;
+    @include border();
 
     img {
         height: 100%;
         width: 100%;
-        border-radius: 25px;
+        border-radius: 8px;
     }
 }
 
 .show-contents {
     height: 80vh;
     width: 25vw;
-    border: 2px black solid;
     margin: 5px;
+
+    @include border();
 }
 
 .show-details {
     height: 50%;
     width: 100%;
-    border: 2px black solid;
 
     p {
         width: 95%;
@@ -45,7 +47,6 @@
 .show-comments {
     height: 49%;
     width: 100%;
-    border: 2px black solid;
     overflow: scroll;
 
     scrollbar-width: none;
@@ -53,4 +54,11 @@
     &::-webkit-scrollbar {
         display: none;
     }
+}
+
+.bar {
+    height: 1px;
+    width: 90%;
+    background-color: black;
+    margin: auto;
 }
