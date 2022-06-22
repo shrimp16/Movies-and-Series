@@ -54,75 +54,7 @@ export default class Show {
                     </div>
 
                     <div class="show-comments">
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                    <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
-                        <p>asjdfsdfasdfasdfasdf</p>
+                    
                     </div>
                 </div>
 
