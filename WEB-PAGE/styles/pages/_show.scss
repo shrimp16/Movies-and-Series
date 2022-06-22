@@ -1,0 +1,30 @@
+.show-body {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    margin: auto;
+}
+
+.show-image {
+    height: 80vh;
+    width: 25vw;
+    border: 2px black solid;
+}
+
+.show-contents {
+    height: 80vh;
+    width: 25vw;
+    border: 2px black solid;
+}
+
+.show-details {
+    height: 50%;
+    width: 100%;
+    border: 2px black solid;
+}
+
+.show-comments {
+    height: 49%;
+    width: 100%;
+    border: 2px black solid;
+}
