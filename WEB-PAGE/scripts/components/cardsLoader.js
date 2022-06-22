@@ -43,6 +43,14 @@ export default class CardsLoader {
 
         document.getElementById('cards-body').innerHTML = HTML;
 
+        let cardsElements = document.getElementsByClassName('card');
+
+        for(let i = 0; i < cardsElements.length; i++){
+            cardsElements[i].addEventListener('click', () => {
+                window.location.href = `/#show?id=${cards[i].contentID}`;
+            })
+        }
+
         this.loadSorter();
 
     }
