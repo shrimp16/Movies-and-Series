@@ -759,6 +759,11 @@ input[type=file] {
 .show-details {
   height: 50%;
   width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.show-details::-webkit-scrollbar {
+  display: none;
 }
 .show-details p {
   width: 95%;
