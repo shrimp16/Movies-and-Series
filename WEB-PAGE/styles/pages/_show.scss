@@ -27,4 +27,11 @@
     height: 49%;
     width: 100%;
     border: 2px black solid;
+    overflow: scroll;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }

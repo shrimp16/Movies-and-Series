@@ -727,4 +727,9 @@ input[type=file] {
   height: 49%;
   width: 100%;
   border: 2px black solid;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.show-comments::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
