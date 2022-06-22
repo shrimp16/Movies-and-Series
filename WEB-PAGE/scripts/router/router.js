@@ -6,7 +6,8 @@ const pages = [
     'profile',
     'profile-editor',
     'show-creator',
-    'password-changer'
+    'password-changer',
+    'show'
 ]
 
 export default class Router {

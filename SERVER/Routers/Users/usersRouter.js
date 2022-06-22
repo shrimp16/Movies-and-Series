@@ -29,6 +29,12 @@ router.get('/user-content/:id', (req, res) => {
 
 })
 
+router.get('/content/:id', (req, res) => {
+
+    res.send(dbManager.getDataFromTableWithCondition('content', null, `contentID=${req.params.id}`));
+
+})
+
 router.get('/image/:image', (req, res) => {
 
     res.sendFile(path.join(__dirname, `../../Persistance/Images/${req.params.image}`));
