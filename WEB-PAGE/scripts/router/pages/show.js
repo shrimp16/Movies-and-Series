@@ -45,16 +45,18 @@ export default class Show {
         let HTML = `
             <div class="show-body">
                 <div class="show-image">
-
+                    <img src="${showData.image}">
                 </div>
 
                 <div class="show-contents">
                     <div class="show-details">
-                    
+                        <p class="show-title">Title: ${showData.title}</p>
+                        <p class="show-rate">Rate: ${showData.rate}/10</p>
+                        <p class="show-description">Description: ${showData.description}</p>
                     </div>
 
                     <div class="show-comments">
-                    
+                        <p>WIP</p>
                     </div>
                 </div>
 

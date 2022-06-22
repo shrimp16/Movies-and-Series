@@ -9,18 +9,37 @@
     height: 80vh;
     width: 25vw;
     border: 2px black solid;
+    margin: 5px;
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+    }
 }
 
 .show-contents {
     height: 80vh;
     width: 25vw;
     border: 2px black solid;
+    margin: 5px;
 }
 
 .show-details {
     height: 50%;
     width: 100%;
     border: 2px black solid;
+
+    p {
+        width: 95%;
+        height: fit-content;
+        background-color: rgba(111, 111, 111, 0.2);
+        margin: auto;
+        margin-top: 5px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
 }
 
 .show-comments {
