@@ -767,13 +767,8 @@ input[type=file] {
 }
 .show-details p {
   width: 95%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: rgba(111, 111, 111, 0.2);
   margin: auto;
   margin-top: 5px;
-  border-radius: 10px;
   text-align: center;
   font-size: 1.5rem;
 }
