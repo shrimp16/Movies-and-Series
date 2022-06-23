@@ -89,6 +89,26 @@
     }
 }
 
+.create-comment {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    .write-comment {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
 .bar {
     height: 1px;
     width: 90%;

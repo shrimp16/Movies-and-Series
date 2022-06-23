@@ -807,6 +807,21 @@ input[type=file] {
   display: none;
 }
 
+.create-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.create-comment img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.create-comment .write-comment::-webkit-scrollbar {
+  display: none;
+}
+
 .bar {
   height: 1px;
   width: 90%;
