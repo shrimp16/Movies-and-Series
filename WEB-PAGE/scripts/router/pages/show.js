@@ -58,7 +58,38 @@ export default class Show {
                     <div class="bar"></div>
 
                     <div class="show-comments">
-                        <p>WIP</p>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
+                        <div class="comment">
+                            <img src="../../images/default-user-image.png">
+                            <p>This is a very nice very good comment omg this nees to be a lot bigger now omg wow wtf lol lmao xd xd xd </p>
+                        </div>
                     </div>
                 </div>
 

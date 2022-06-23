@@ -61,6 +61,34 @@
     }
 }
 
+.comment {
+
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    p {
+        height: 2.5rem;
+        overflow: scroll;
+        margin-left: 5px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
 .bar {
     height: 1px;
     width: 90%;
