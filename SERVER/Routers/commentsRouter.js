@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const jsonParser = require('body-parser').json();
 const dbManager = require('../Persistance/dbManager');
-
-router.get('get-comments/:id', (req, res) => {
+ 
+router.get('/get-comments/:id', (req, res) => {
     res.send(dbManager.getDataFromTableWithCondition('comments', null, `contentID=${req.params.id}`));
 })
 
@@ -25,3 +25,5 @@ router.delete('/remove-comment/:id', (req, res) => {
     dbManager.removeFromDatabse('comments', `commentID=${req.params.id}`);
     res.send("Sucess");
 })
+
+module.exports = router;

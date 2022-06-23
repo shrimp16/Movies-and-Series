@@ -8,6 +8,7 @@ const PORT = yargs.argv._[0] || 50000;
 
 const pageRouter = require('./Routers/pageRouter');
 const uploadRouter = require('./Routers/uploadRouter');
+const commentsRouter = require('./Routers/commentsRouter');
 const usersRouter = require('./Routers/Users/usersRouter');
 const usersChangesRouter = require('./Routers/Users/usersChangesRouter');
 
@@ -21,5 +22,6 @@ app.use(cors());
 
 app.use(pageRouter);
 app.use(uploadRouter);
+app.use(commentsRouter);
 app.use(usersRouter);
 app.use(usersChangesRouter);

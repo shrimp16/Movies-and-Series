@@ -818,6 +818,9 @@ input[type=file] {
   width: 40px;
   border-radius: 50%;
 }
+.create-comment .write-comment {
+  margin-left: 5px;
+}
 .create-comment .write-comment::-webkit-scrollbar {
   display: none;
 }

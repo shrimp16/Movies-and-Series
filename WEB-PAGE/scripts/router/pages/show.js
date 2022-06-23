@@ -1,4 +1,5 @@
 let showData = {};
+let showComments;
 
 export default class Show {
 
