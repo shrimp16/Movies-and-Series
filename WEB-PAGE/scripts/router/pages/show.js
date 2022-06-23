@@ -38,7 +38,13 @@ export default class Show {
                                 }))
                     })
             })
+        await fetch(`http://192.168.1.103:50000/get-comments/${id}`)
+            .then(response => response.json()
+                .then((response) => {
+                    showComments = response;
+                }))
         console.table(showData);
+        console.table(showComments);
         this.loadPage();
     }
 
