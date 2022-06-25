@@ -95,6 +95,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 5px;
 
     img {
         height: 40px;
@@ -104,6 +106,7 @@
 
     .write-comment {
         margin-left: 5px;
+        width: 80%;
         &::-webkit-scrollbar {
             display: none;
         }

@@ -812,6 +812,8 @@ input[type=file] {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 5px;
 }
 .create-comment img {
   height: 40px;
@@ -820,6 +822,7 @@ input[type=file] {
 }
 .create-comment .write-comment {
   margin-left: 5px;
+  width: 80%;
 }
 .create-comment .write-comment::-webkit-scrollbar {
   display: none;
