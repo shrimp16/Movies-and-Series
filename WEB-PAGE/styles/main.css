@@ -825,6 +825,16 @@ input[type=file] {
   display: none;
 }
 
+.no-comment svg {
+  display: block;
+  margin: auto;
+  margin-top: 0.5rem;
+}
+.no-comment p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .bar {
   height: 1px;
   width: 90%;
