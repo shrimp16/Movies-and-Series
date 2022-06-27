@@ -811,7 +811,7 @@ input[type=file] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   position: absolute;
   bottom: 5px;
 }
@@ -822,10 +822,24 @@ input[type=file] {
 }
 .create-comment .write-comment {
   margin-left: 5px;
-  width: 80%;
+  width: 75%;
 }
 .create-comment .write-comment::-webkit-scrollbar {
   display: none;
+}
+.create-comment button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px blue solid;
+  color: blue;
+  background-color: rgba(0, 0, 255, 0.5);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.create-comment button:hover {
+  background-color: rgb(0, 0, 255);
+  color: white;
 }
 
 .white-space {
