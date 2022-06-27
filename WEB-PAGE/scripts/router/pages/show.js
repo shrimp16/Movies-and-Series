@@ -124,7 +124,7 @@ export default class Show {
             for (let i = 0; i < showComments.length; i++) {
                 HTML += `
                 <div class="comment">
-                    <img src="../../images/default-user-image.png">
+                    <img src="${showComments[i].image}">
                     <p>${showComments[i].text}</p>
                 </div>
                 `
