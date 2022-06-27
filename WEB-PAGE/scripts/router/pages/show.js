@@ -124,10 +124,11 @@ export default class Show {
             for (let i = 0; i < showComments.length; i++) {
                 HTML += `
                 <div class="comment">
-                    <img src="${showComments[i].image}">
+                    <img id="${i}" src="${showComments[i].image}">
                     <p>${showComments[i].text}</p>
                 </div>
                 `
+        
             }
 
         }
@@ -146,6 +147,12 @@ export default class Show {
         `
 
         commentsView.innerHTML = HTML;
+
+        for(let i = 0; i < showComments.length; i++){
+            document.getElementById(`${i}`).addEventListener('click', () => {
+                window.location.hash = `#profile?id=${showComments[i].ownerID}`;
+            })
+        }
 
         document.getElementById('comment-input').addEventListener('click', () => {
             if (document.getElementById('comment-input').value === 'Write a comment!') {

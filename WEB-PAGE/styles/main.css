@@ -819,6 +819,7 @@ input[type=file] {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .create-comment .write-comment {
   margin-left: 5px;
