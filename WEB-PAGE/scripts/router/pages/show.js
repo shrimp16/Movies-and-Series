@@ -42,9 +42,13 @@ export default class Show {
             .then(response => response.json()
                 .then(async (response) => {
                     showComments = response;
-                    /*for(let i = 0; i < response.length; i++){
-                        await fetch('http://192.168.1.103:50000/image/')
-                    }*/
+                    for (let i = 0; i < response.length; i++) {
+                        await fetch(`http://192.168.1.103:50000/user-picture/${response[i].ownerID}`)
+                            .then(image => image.blob()
+                                .then((image) => {
+                                    showComments[i].image = URL.createObjectURL(image);
+                                }))
+                    }
                 }))
         console.table(showData);
         console.log(showComments);
@@ -144,7 +148,7 @@ export default class Show {
         commentsView.innerHTML = HTML;
 
         document.getElementById('comment-input').addEventListener('click', () => {
-            if(document.getElementById('comment-input').value === 'Write a comment!'){
+            if (document.getElementById('comment-input').value === 'Write a comment!') {
                 document.getElementById('comment-input').value = '';
             }
         })
