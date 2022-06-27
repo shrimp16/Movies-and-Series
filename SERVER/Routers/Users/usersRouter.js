@@ -41,6 +41,13 @@ router.get('/image/:image', (req, res) => {
 
 })
 
+router.get('/user-picture/:id', (req, res) => {
+
+    let image = dbManager.getDataFromTableWithCondition('profiles', 'picture', `userID=${req.params.id}`);
+    res.sendFile(path.join(__dirname, `../../Persistance/Images/${image}`));
+
+})
+
 router.get('/user-profile/:id', (req, res) => {
 
     if(dbManager.getDataFromTableWithCondition('users', null, `userID=${req.params.id}`).length < 1){

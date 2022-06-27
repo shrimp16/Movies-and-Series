@@ -40,8 +40,11 @@ export default class Show {
             })
         await fetch(`http://192.168.1.103:50000/get-comments/${id}`)
             .then(response => response.json()
-                .then((response) => {
+                .then(async (response) => {
                     showComments = response;
+                    /*for(let i = 0; i < response.length; i++){
+                        await fetch('http://192.168.1.103:50000/image/')
+                    }*/
                 }))
         console.table(showData);
         console.log(showComments);
